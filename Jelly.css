@@ -7,7 +7,7 @@
 .backgroundContainer,
 .dialog,
 html {
-  background-image: url("https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/heads/main/Fundal.jpg") !important;      
+  background-image: url("https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/heads/main/Fundal.jpg") !important;  
 }
 
 /* Header optimizat - Am corectat "impornatn" și am simplificat */
@@ -22,7 +22,7 @@ html {
 
 /* Fundal Image - Corectat sintaxa (era o virgulă greșită) */
 .backgroundContainer {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7))                  
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));                  
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
@@ -37,7 +37,7 @@ html {
 }
 
 .backgroundContainer.withBackdrop:has(~ .mainAnimatedPages > .homePage:not(.hide)) {
-  background-image: url("https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/heads/main/backgroundd.jpg") !important;
+  background-image: url("https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/heads/main/Fundal.jpg") !important;  
 }
 
 /* Stiluri Inputuri */
