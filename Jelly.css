@@ -7,7 +7,7 @@
 .backgroundContainer,
 .dialog,
 html {
-  background-image: url("https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/heads/main/Background5.jpg") !important;  
+  background-image: url("https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/heads/main/Backgroun1.jpg") !important;  
 }
 
 /* Header optimizat - Am corectat "impornatn" și am simplificat */
@@ -34,7 +34,7 @@ html {
 }
 
 .backgroundContainer.withBackdrop:has(~ .mainAnimatedPages > .homePage:not(.hide)) {
-  background-image: url("https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/heads/main/Background5.jpg") !important;  
+  background-image: url("https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/heads/main/Backgroun1.jpg") !important;  
 }
 
 /* Stiluri Inputuri */
