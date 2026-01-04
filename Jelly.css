@@ -7,7 +7,7 @@
 .backgroundContainer,
 .dialog,
 html {
-  background-image: url("https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/heads/main/backgroundd.jpg") !important;      
+  background-image: url("https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/heads/main/Fundal.jpg") !important;      
 }
 
 /* Header optimizat - Am corectat "impornatn" și am simplificat */
@@ -31,6 +31,9 @@ html {
 /* Darken Background când există Backdrop */
 .backgroundContainer.withBackdrop {
     background: rgba(0, 0, 0, 0.5) !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
 }
 
 .backgroundContainer.withBackdrop:has(~ .mainAnimatedPages > .homePage:not(.hide)) {
