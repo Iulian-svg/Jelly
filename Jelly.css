@@ -70,8 +70,8 @@ html {
   background-color: #000000 !important; /* Negru închis */
   color: #FFFFFF !important; /* Iconițe albe */
   border-radius: 50% !important; /* Formă de cerc */
-  width: 40px; /* Dimensiune fixă pentru cerc */
-  height: 40px; /* Dimensiune fixă pentru cerc */
+  width: 50px; /* Dimensiune fixă pentru cerc */
+  height: 50px; /* Dimensiune fixă pentru cerc */
   padding: 0 !important;
   display: flex;
   justify-content: center;
