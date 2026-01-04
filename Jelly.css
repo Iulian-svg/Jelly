@@ -57,3 +57,51 @@ html {
 .emby-select-withcolor {
   border-color: transparent !important;
 }
+
+/* Containerul principal - adaugă spațiu între butoane */
+.mainDetailButtons {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Adaugă spațiu generos între butoane ("date mai încolo") */
+}
+
+/* Stil general pentru butoanele secundare: Cercuri albe cu background negru */
+.detailButton.emby-button:not(.btnPlay) {
+  background-color: #000000 !important; /* Negru închis */
+  color: #FFFFFF !important; /* Iconițe albe */
+  border-radius: 50% !important; /* Formă de cerc */
+  width: 40px; /* Dimensiune fixă pentru cerc */
+  height: 40px; /* Dimensiune fixă pentru cerc */
+  padding: 0 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.detailButton.emby-button:not(.btnPlay):hover {
+    background-color: #333333 !important;
+    transform: scale(1.05);
+}
+
+/* Stil specific pentru butonul principal de redare (clasa .btnPlay) */
+.btnPlay {
+  background-color: #FFFFFF !important; /* Chenar alb */
+  color: #000000 !important; /* Text/iconiță negru închis */
+  border-radius: 50% !important; /* Colțuri rotunde (nu cerc complet) */
+  padding: 0 !important;
+  width: 60px; /* Dimensiune fixă pentru cerc */
+  height: 60px; /* Dimensiune fixă pentru cerc */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+
+}
+
+.btnPlay:hover {
+    background-color: #f0f0f0 !important;
+}
+
+/* Stil pentru iconițe, asigurându-le dimensiunea corectă */
+.detailButton-icon {
+    font-size: 24px;
+}
