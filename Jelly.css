@@ -3,16 +3,11 @@
     clip-path: inset(0 round 12px);
 }
 
-.backgroundContainer::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-image: url("https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/heads/main/background.jpg");
-  background-size: cover;
-  filter: blur(30px); /* Aplici blur-ul aici */
-  z-index: -1; /* Trimite imaginea în spatele textului */
-  transform: scale(1.1); /* Opțional: elimină marginile albe cauzate de blur */
-    
+/* Fundal global - Am folosit background-color ca fallback pentru rapiditate */
+.backgroundContainer,
+.dialog,
+html {
+  background-image: url("https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/heads/main/backgroundd.jpg") !important;      
 }
 
 /* Header optimizat - Am corectat "impornatn" și am simplificat */
@@ -39,11 +34,7 @@
 }
 
 .backgroundContainer.withBackdrop:has(~ .mainAnimatedPages > .homePage:not(.hide)) {
-  background-image: url("https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/heads/main/background.jpg") !important;
-  background-size: cover;
-  filter: blur(30px); /* Aplici blur-ul aici */
-  z-index: -1; /* Trimite imaginea în spatele textului */
-  transform: scale(1.1); /* Opțional: elimină marginile albe cauzate de blur */
+  background-image: url("https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/heads/main/backgroundd.jpg") !important;
 }
 
 /* Stiluri Inputuri */
