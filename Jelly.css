@@ -105,3 +105,36 @@ html {
 .detailButton-icon {
     font-size: 24px;
 }
+
+/* 1. Importă fontul Montserrat de pe serverele Google */
+@import url('fonts.googleapis.com');
+
+/* 2. Aplică setările pe întreaga interfață */
+body, h1, h2, h3, h4, h5, h6, p, a, .cardText, .textActionButton, .itemName {
+    /* Folosește Montserrat, iar dacă nu se încarcă, folosește alternativele standard */
+    font-family: 'Montserrat', sans-serif !important; 
+    
+    color: #ffffff !important; /* Alb pur */
+    font-weight: 350 !important; /* Îngroșat (Bold) */
+    text-shadow: 
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000 !important;    
+    
+}
+
+/* 3. Ajustări specifice pentru titlurile de filme pe pagini (să fie și mai de impact) */
+.itemName {
+    font-weight: 700 !important; /* Extra bold pentru titluri */
+    text-transform: ; /* Opțional: face titlurile cu majuscule pentru un look cinema */
+    letter-spacing: 1px; /* Spațiere ușoară între litere */
+}
+
+/* 4. Asigură-te că și descrierile sunt lizibile */
+.overview {
+    font-weight: 300 !important; /* Descrierea e mai bine să fie puțin mai subțire decât titlul */
+    font-size: 1.1em;
+}
+
+
