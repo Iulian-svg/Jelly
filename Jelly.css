@@ -1,0 +1,59 @@
+/* Rotunjire carduri - Safe pentru TV */
+.cardScalable {
+    clip-path: inset(0 round 12px);
+}
+
+/* Fundal global - Am folosit background-color ca fallback pentru rapiditate */
+.backgroundContainer,
+.dialog,
+html {
+  background-image: url("https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/heads/main/Background5.jpg") !important;  
+}
+
+/* Header optimizat - Am corectat "impornatn" și am simplificat */
+.skinHeader.focuscontainer-x.skinHeader-withBackground.skinHeader-blurred {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  height: 70px;
+}
+
+/* Fundal Image - Corectat sintaxa (era o virgulă greșită) */
+.backgroundContainer {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7))                  
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+/* Darken Background când există Backdrop */
+.backgroundContainer.withBackdrop {
+    background: rgba(0, 0, 0, 0.5) !important;
+}
+
+.backgroundContainer.withBackdrop:has(~ .mainAnimatedPages > .homePage:not(.hide)) {
+  background-image: url("https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/heads/main/Background5.jpg") !important;  
+}
+
+/* Stiluri Inputuri */
+.emby-input,
+.emby-textarea,
+.emby-select {
+    background: rgba(0, 0, 0, 0.3);
+    border-color: transparent !important;
+}
+
+/* Ascundere butoane inutile pentru a elibera memoria interfeței */
+.headerCastButton,
+.headerSyncButton {
+  display: none;
+}
+
+/* Eliminare focus border pentru un aspect mai curat pe TV */
+.emby-input:focus,
+.emby-textarea:focus,
+.emby-select-withcolor {
+  border-color: transparent !important;
+}
