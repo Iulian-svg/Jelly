@@ -143,3 +143,45 @@ body, h1, h2, h3, h4, h5, h6, p, a, .cardText, .textActionButton, .itemName {
 /* Home Page Logo*/
 .pageTitleWithLogo {
 background-image: url(https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/heads/main/Logo.png) !important; }
+
+/* Stiluri pentru butonul specific de Resume/Redare de pe pagina de detalii */
+button.detailButton[data-action="resume"] {
+    background-color: #000000 !important; 
+    color: white !important;
+    border-radius: 40px !important; /* Colțuri rotunjite */
+    padding: 0px 60px !important; /* Spațiere */
+    /* Configurăm containerul principal să fie inline-flex pentru a se comporta ca un singur bloc */
+    display: inline-flex !important; 
+    align-items: center !important; /* Aliniază vertical elementele din centru */
+    justify-content: center !important;
+}
+
+/* Stiluri pentru cercul alb din jurul pictogramei */
+button.detailButton[data-action="resume"] .detailButton-icon.play_arrow {
+    background-color: white !important; /* Fundal alb */
+    border-radius: 50% !important; /* Cerc */
+    width: 32px !important;
+    height: 32px !important;
+    /* Aliniază simbolul play în centrul cercului */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: #000000 !important; 
+    font-size: 20px !important;
+}
+
+/* Containerul de conținut va folosi, de asemenea, flexbox pentru a se asigura că totul stă pe un rând */
+button.detailButton[data-action="resume"] .detailButton-content {
+    display: flex !important;
+    align-items: center !important;
+    flex-direction: row !important; /* Forțează dispunerea pe rând (orizontală) */
+}
+
+/* Adaugă textul "Play" lângă pictogramă */
+button.detailButton[data-action="resume"] .detailButton-content:after {
+    content: "Play" !important;
+    font-size: 20px !important;
+    font-weight: bold !important;
+    margin-left: 8px !important; /* Spațiu între cerc și text */
+    line-height: normal !important;
+}
