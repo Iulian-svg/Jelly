@@ -146,7 +146,7 @@ background-image: url(https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/he
 
 /* Stiluri pentru butonul specific de Resume/Redare de pe pagina de detalii */
 button.detailButton[data-action="resume"] {
-    background-color: #000000 !important; 
+    background-color: #ffffff !important; 
     color: white !important;
     border-radius: 40px !important; /* Colțuri rotunjite */
     padding: 0px 60px !important; /* Spațiere */
@@ -158,7 +158,7 @@ button.detailButton[data-action="resume"] {
 
 /* Stiluri pentru cercul alb din jurul pictogramei */
 button.detailButton[data-action="resume"] .detailButton-icon.play_arrow {
-    background-color: white !important; /* Fundal alb */
+    background-color: black !important; /* Fundal alb */
     border-radius: 50% !important; /* Cerc */
     width: 32px !important;
     height: 32px !important;
@@ -166,7 +166,7 @@ button.detailButton[data-action="resume"] .detailButton-icon.play_arrow {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    color: #000000 !important; 
+    color: #ffffff !important; 
     font-size: 20px !important;
 }
 
@@ -179,9 +179,84 @@ button.detailButton[data-action="resume"] .detailButton-content {
 
 /* Adaugă textul "Play" lângă pictogramă */
 button.detailButton[data-action="resume"] .detailButton-content:after {
+    color: #000000 !important;
     content: "Play" !important;
     font-size: 20px !important;
     font-weight: bold !important;
     margin-left: 8px !important; /* Spațiu între cerc și text */
     line-height: normal !important;
+}
+
+/* Stil general butoane player */
+.osdControls .paper-icon-button-light {
+    color: #ffffff !important;
+    transition: all 0.2s ease-in-out !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-radius: 50% !important;
+    margin: 0 5px !important;
+}
+
+/* Culoarea de selecție (Focus) pe TV */
+.osdControls .paper-icon-button-light:focus {
+    background: #ffffff !important; /* Fundal alb la selecție */
+    color: #000000 !important;    /* Iconița devine neagră */
+    transform: scale(1.2);         /* Butonul se mărește */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+/* Butonul de Play/Pause să fie puțin mai mare */
+.btnPause {
+    transform: scale(1.3);
+    margin: 0 15px !important;
+}
+.btnPause:focus {
+    transform: scale(1.5) !important;
+}
+
+/* Fundalul barei (partea nevizionată) */
+.osdPositionSlider .mdl-slider-background-upper {
+    background: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Partea vizionată (Progresul) */
+.osdPositionSlider .mdl-slider-background-lower {
+    background: #ff0000 !important; /* O facem albă pentru un look minimalist */
+}
+
+/* Cercul (Thumb-ul) care arată unde ești cu filmul */
+.osdPositionSlider::-webkit-slider-thumb {
+    background: #ffffff !important;
+    border: 2px solid #000;
+}
+
+.sliderMarker {
+    width: 4px !important;
+    background-color: #f7d117 !important; /* Un galben elegant pentru marcaje intro */
+    opacity: 0.8;
+}
+
+.osdTimeText, .startTimeText, .endTimeText {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* 1. Stilul de bază al butonului (pentru a asigura contrastul cu textul alb) */
+.skip-button {
+    background: rgba(40, 40, 40, 0.8) !important; /* Gri închis elegant */
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    transition: all 0.3s ease;
+}
+
+/* 2. Culoarea când este SELECTAT (în loc de albastru) */
+/* Folosim o culoare elegantă de accent (ex: un auriu discret sau un gri deschis) */
+.skip-button:focus {
+    background: #e2e2e2 !important; /* Fundal alb-murdar/gri deschis la selecție */
+    color: #000000 !important;       /* Text negru pentru contrast maxim pe selecție */
+    border-color: #ffffff !important;
+    transform: scale(1.1);            /* Se mărește ușor pentru a confirma selecția */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    outline: none !important;         /* Elimină conturul albastru implicit */
 }
