@@ -266,3 +266,30 @@ button.detailButton[data-action="resume"] .detailButton-content:after {
   background-color: transparent !important;
   box-shadow: none !important; /* Opțional: elimină efectul de strălucire dacă există */
 }
+
+/* Ascunde bara de derulare pentru toate elementele din interfata web */
+::-webkit-scrollbar {
+    display: none !important;
+}
+
+/* Ascunde bara de derulare pentru standardul Firefox */
+* {
+    scrollbar-width: none !important; /* Firefox */
+}
+
+/* Zoom effect on hover/focus */
+.card:hover, .card:focus-within {
+    transform: scale(1.05); /* Ajustează valoarea (ex: 1.1 pentru zoom mai mare) */
+    z-index: 10; /* Asigură că elementul mărit este deasupra celorlalte */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6); /* Adaugă o umbră subtilă */
+}
+
+/* Hide the default border (optional, if the above doesn't fully remove it) */
+.card:hover .cardImageContainer, .card:focus-within .cardImageContainer {
+    border-color: transparent !important;
+}
+
+.cardImageContainer {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, border 0.2s ease-in-out;
+}
+
