@@ -17,7 +17,7 @@ html {
   -webkit-backdrop-filter: none !important;
   box-shadow: none !important;
   border: none !important;
-  height: 70px;
+  height: 100px;
 }
 
 /* Fundal Image - Corectat sintaxa (era o virgulă greșită) */
@@ -259,4 +259,10 @@ button.detailButton[data-action="resume"] .detailButton-content:after {
     transform: scale(1.1);            /* Se mărește ușor pentru a confirma selecția */
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
     outline: none !important;         /* Elimină conturul albastru implicit */
+}
+
+/* Fă fundalul elementului selectat complet transparent */
+.listItem.itemAction.focused, .listItem.itemAction:focus, .listItem.itemAction:hover {
+  background-color: transparent !important;
+  box-shadow: none !important; /* Opțional: elimină efectul de strălucire dacă există */
 }
