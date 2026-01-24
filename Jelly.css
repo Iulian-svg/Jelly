@@ -276,18 +276,3 @@ button.detailButton[data-action="resume"] .detailButton-content:after {
 * {
     scrollbar-width: none !important; /* Firefox */
 }
-
-/* Zoom effect on hover/focus */
-.card:hover, .card:focus-within {
-    transform: scale(1.05); /* Ajustează valoarea (ex: 1.1 pentru zoom mai mare) */
-    z-index: 10; /* Asigură că elementul mărit este deasupra celorlalte */
-    box-shadow: none !important; /* Elimină umbra */
-}
-
-/* Hide the default blue border */
-.cardImageContainer {
-    border: none !important; /* Elimină complet bordura */
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, border 0.2s ease-in-out;
-}
-
-
