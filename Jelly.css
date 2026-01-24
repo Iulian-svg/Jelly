@@ -281,15 +281,13 @@ button.detailButton[data-action="resume"] .detailButton-content:after {
 .card:hover, .card:focus-within {
     transform: scale(1.05); /* Ajustează valoarea (ex: 1.1 pentru zoom mai mare) */
     z-index: 10; /* Asigură că elementul mărit este deasupra celorlalte */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6); /* Adaugă o umbră subtilă */
+    box-shadow: none !important; /* Elimină umbra */
 }
 
-/* Hide the default border (optional, if the above doesn't fully remove it) */
-.card:hover .cardImageContainer, .card:focus-within .cardImageContainer {
-    border-color: transparent !important;
-}
-
+/* Hide the default blue border */
 .cardImageContainer {
+    border: none !important; /* Elimină complet bordura */
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, border 0.2s ease-in-out;
 }
+
 
