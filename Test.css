@@ -1,0 +1,330 @@
+/* ========================= */
+      /* SCOPE TV ONLY */
+/* ========================= */
+
+/* Rotunjire carduri - Safe pentru TV */
+.layout-tv .cardScalable {
+    clip-path: inset(0 round 12px);
+}
+
+/* Fundal global - Am folosit background-color ca fallback pentru rapiditate */
+.layout-tv .backgroundContainer,
+.layout-tv .dialog,
+.layout-tv html {
+  background-image: url("https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/heads/main/Fundal.jpg") !important;  
+}
+
+/* Header optimizat - Am corectat "impornatn" și am simplificat */
+.layout-tv .skinHeader.focuscontainer-x.skinHeader-withBackground.skinHeader-blurred {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  height: 100px;
+}
+
+/* Fundal Image - Corectat sintaxa (era o virgulă greșită) */
+.layout-tv .backgroundContainer {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));                  
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+/* Darken Background când există Backdrop */
+.layout-tv .backgroundContainer.withBackdrop {
+    background: rgba(0, 0, 0, 0.5) !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+.layout-tv .backgroundContainer.withBackdrop:has(~ .mainAnimatedPages > .homePage:not(.hide)) {
+  background-image: url("https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/heads/main/Fundal.jpg") !important;  
+}
+
+/* Stiluri Inputuri */
+.layout-tv .emby-input,
+.layout-tv .emby-textarea,
+.layout-tv .emby-select {
+    background: rgba(0, 0, 0, 0.3);
+    border-color: transparent !important;
+}
+
+/* Ascundere butoane inutile pentru a elibera memoria interfeței */
+.layout-tv .headerCastButton,
+.layout-tv .headerSyncButton {
+  display: none;
+}
+
+/* Eliminare focus border pentru un aspect mai curat pe TV */
+.layout-tv .emby-input:focus,
+.layout-tv .emby-textarea:focus,
+.layout-tv .emby-select-withcolor {
+  border-color: transparent !important;
+}
+
+/* Containerul principal - adaugă spațiu între butoane */
+.layout-tv .mainDetailButtons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Stil general pentru butoanele secundare */
+.layout-tv .detailButton.emby-button:not(.btnPlay) {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+  border-radius: 50% !important;
+  width: 50px;
+  height: 50px;
+  padding: 0 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.layout-tv .detailButton.emby-button:not(.btnPlay):hover {
+    background-color: #333333 !important;
+    transform: scale(1.05);
+}
+
+/* Stil specific pentru butonul principal de redare */
+.layout-tv .btnPlay {
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  width: 60px;
+  height: 60px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.layout-tv .btnPlay:hover {
+    background-color: #f0f0f0 !important;
+}
+
+/* Stil pentru iconițe */
+.layout-tv .detailButton-icon {
+    font-size: 24px;
+}
+
+/* Import font */
+@import url('fonts.googleapis.com');
+
+/* Font global */
+.layout-tv body,
+.layout-tv h1,
+.layout-tv h2,
+.layout-tv h3,
+.layout-tv h4,
+.layout-tv h5,
+.layout-tv h6,
+.layout-tv p,
+.layout-tv a,
+.layout-tv .cardText,
+.layout-tv .textActionButton,
+.layout-tv .itemName {
+    font-family: 'Montserrat', sans-serif !important; 
+    color: #ffffff !important;
+    font-weight: 350 !important;
+    text-shadow: 
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000 !important;    
+}
+
+/* Titluri */
+.layout-tv .itemName {
+    font-weight: 700 !important;
+    text-transform: ;
+    letter-spacing: 1px;
+}
+
+/* Descrieri */
+.layout-tv .overview {
+    font-weight: 300 !important;
+    font-size: 1.1em;
+}
+
+/* Logo */
+.layout-tv .pageTitleWithLogo {
+background-image: url(https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/heads/main/Logo.png) !important; }
+
+/* Resume button */
+.layout-tv button.detailButton[data-action="resume"] {
+    background-color: #ffffff !important; 
+    color: white !important;
+    border-radius: 40px !important;
+    padding: 0px 60px !important;
+    display: inline-flex !important; 
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* Cerc icon play */
+.layout-tv button.detailButton[data-action="resume"] .detailButton-icon.play_arrow {
+    background-color: black !important;
+    border-radius: 50% !important;
+    width: 32px !important;
+    height: 32px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: #ffffff !important; 
+    font-size: 20px !important;
+}
+
+/* Resume content */
+.layout-tv button.detailButton[data-action="resume"] .detailButton-content {
+    display: flex !important;
+    align-items: center !important;
+    flex-direction: row !important;
+}
+
+/* Text Play */
+.layout-tv button.detailButton[data-action="resume"] .detailButton-content:after {
+    color: #000000 !important;
+    content: "Play" !important;
+    font-size: 20px !important;
+    font-weight: bold !important;
+    margin-left: 8px !important;
+    line-height: normal !important;
+}
+
+/* Player buttons */
+.layout-tv .osdControls .paper-icon-button-light {
+    color: #ffffff !important;
+    transition: all 0.2s ease-in-out !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-radius: 50% !important;
+    margin: 0 5px !important;
+}
+
+/* Focus TV */
+.layout-tv .osdControls .paper-icon-button-light:focus {
+    background: #ffffff !important;
+    color: #000000 !important;
+    transform: scale(1.2);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+/* Pause */
+.layout-tv .btnPause {
+    transform: scale(1.3);
+    margin: 0 15px !important;
+}
+.layout-tv .btnPause:focus {
+    transform: scale(1.5) !important;
+}
+
+/* Slider */
+.layout-tv .osdPositionSlider .mdl-slider-background-upper {
+    background: rgba(255, 255, 255, 0.2) !important;
+}
+
+.layout-tv .osdPositionSlider .mdl-slider-background-lower {
+    background: #ff0000 !important;
+}
+
+.layout-tv .osdPositionSlider::-webkit-slider-thumb {
+    background: #ffffff !important;
+    border: 2px solid #000;
+}
+
+.layout-tv .sliderMarker {
+    width: 4px !important;
+    background-color: #f7d117 !important;
+    opacity: 0.8;
+}
+
+.layout-tv .osdTimeText,
+.layout-tv .startTimeText,
+.layout-tv .endTimeText {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Skip */
+.layout-tv .skip-button {
+    background: rgba(40, 40, 40, 0.8) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    transition: all 0.3s ease;
+}
+
+.layout-tv .skip-button:focus {
+    background: #e2e2e2 !important;
+    color: #000000 !important;
+    border-color: #ffffff !important;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    outline: none !important;
+}
+
+/* List items */
+.layout-tv .listItem.itemAction.focused,
+.layout-tv .listItem.itemAction:focus,
+.layout-tv .listItem.itemAction:hover {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+
+
+/* Aplică o lățime maximă consistentă și centrează toate secțiunile principale */
+.layout-tv .detailPagePrimaryContainer,
+.layout-tv .verticalSection.detailVerticalSection {
+  max-width: 800px !important; /* Lățimea maximă a conținutului */
+  margin-left: 70px !important;
+  width: 100% !important;
+  margin-top: 70px !important;
+}
+
+/* Asigură că interiorul acestor secțiuni folosește spațierea corectă */
+.layout-tv .detailRibbon,
+.layout-tv .detailPagePrimaryContent,
+.layout-tv .detailImageContainer.hide-mobile,
+.layout-tv .emby-scrollbuttons {
+  padding-left: 20px !important; /* Aliniere fixă, ca la litera T din titlu */
+  padding-right: 20px !important;
+}
+
+
+
+/* Ascunde containerul care conține imaginea și pânza de blur */
+.layout-tv .detailImageContainer.hide-mobile,
+.layout-tv .detailImageContainer.hide-desktop.hide-tv {
+  display: none !important;
+}
+
+/* Setează o marjă stângă de 30px pe containerul interior care gestionează derularea */
+.layout-tv .itemsContainer.scrollSlider {
+  margin-left: 30px !important;
+}
+
+/* Resetează padding-ul pe containerul exterior la zero, pentru a nu se aduna cu marginea de sus */
+.layout-tv .emby-scroller.no-padding {
+  padding-left: 0px !important;
+}
+
+.layout-tv .nextUpSection, 
+.layout-tv .detailPageSecondaryContainer {
+  display: none !important;
+}
+
+/* Ascunde bara de derulare pentru toate elementele din interfata web */
+::-webkit-scrollbar {
+    display: none !important;
+}
+
+/* Ascunde bara de derulare pentru standardul Firefox */
+* {
+    scrollbar-width: none !important; /* Firefox */
+}
