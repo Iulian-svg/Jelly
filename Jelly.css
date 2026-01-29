@@ -1,194 +1,172 @@
-/* Rotunjire carduri - Safe pentru TV */
-.cardScalable {
+/* ===================== */
+/* PC ONLY – layout-desktop */
+/* ===================== */
+
+.layout-desktop .cardScalable {
     clip-path: inset(0 round 12px);
 }
 
-/* Fundal global - Am folosit background-color ca fallback pentru rapiditate */
-.backgroundContainer,
-.dialog,
-html {
-  background-image: url("https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/heads/main/Fundal.jpg") !important;  
+/* Fundal global */
+.layout-desktop .backgroundContainer,
+.layout-desktop .dialog {
+    background-image: url("https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/heads/main/Background6.jpg") !important;  
 }
 
-/* Header optimizat - Am corectat "impornatn" și am simplificat */
-.skinHeader.focuscontainer-x.skinHeader-withBackground.skinHeader-blurred {
-  background: transparent !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  box-shadow: none !important;
-  border: none !important;
-  height: 100px;
+/* Header */
+.layout-desktop .skinHeader.focuscontainer-x.skinHeader-withBackground.skinHeader-blurred {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    height: 60px;
 }
 
-/* Fundal Image - Corectat sintaxa (era o virgulă greșită) */
-.backgroundContainer {
+/* Fundal image */
+.layout-desktop .backgroundContainer {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));                  
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
 }
 
-/* Darken Background când există Backdrop */
-.backgroundContainer.withBackdrop {
+/* Backdrop */
+.layout-desktop .backgroundContainer.withBackdrop {
     background: rgba(0, 0, 0, 0.5) !important;
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
 }
 
-.backgroundContainer.withBackdrop:has(~ .mainAnimatedPages > .homePage:not(.hide)) {
-  background-image: url("https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/heads/main/Fundal.jpg") !important;  
+.layout-desktop .backgroundContainer.withBackdrop:has(~ .mainAnimatedPages > .homePage:not(.hide)) {
+    background-image: url("https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/heads/main/Background6.jpg") !important;  
 }
 
-/* Stiluri Inputuri */
-.emby-input,
-.emby-textarea,
-.emby-select {
+/* Inputuri */
+.layout-desktop .emby-input,
+.layout-desktop .emby-textarea,
+.layout-desktop .emby-select {
     background: rgba(0, 0, 0, 0.3);
     border-color: transparent !important;
 }
 
-/* Ascundere butoane inutile pentru a elibera memoria interfeței */
-.headerCastButton,
-.headerSyncButton {
-  display: none;
+/* Butoane header inutile */
+.layout-desktop .headerCastButton,
+.layout-desktop .headerSyncButton {
+    display: none;
 }
 
-/* Eliminare focus border pentru un aspect mai curat pe TV */
-.emby-input:focus,
-.emby-textarea:focus,
-.emby-select-withcolor {
-  border-color: transparent !important;
+/* Focus input */
+.layout-desktop .emby-input:focus,
+.layout-desktop .emby-textarea:focus,
+.layout-desktop .emby-select-withcolor {
+    border-color: transparent !important;
 }
 
-/* Containerul principal - adaugă spațiu între butoane */
-.mainDetailButtons {
-  display: flex;
-  align-items: center;
-  gap: 20px; /* Adaugă spațiu generos între butoane ("date mai încolo") */
+/* Detail buttons */
+.layout-desktop .mainDetailButtons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 1.5em;
 }
 
-/* Stil general pentru butoanele secundare: Cercuri albe cu background negru */
-.detailButton.emby-button:not(.btnPlay) {
-  background-color: #000000 !important; /* Negru închis */
-  color: #FFFFFF !important; /* Iconițe albe */
-  border-radius: 50% !important; /* Formă de cerc */
-  width: 50px; /* Dimensiune fixă pentru cerc */
-  height: 50px; /* Dimensiune fixă pentru cerc */
-  padding: 0 !important;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease, transform 0.3s ease;
+/* Butoane secundare */
+.layout-desktop .detailButton.emby-button:not(.btnPlay) {
+    background-color: #000000 !important;
+    color: #FFFFFF !important;
+    border-radius: 50% !important;
+    width: 50px;
+    height: 50px;
+    padding: 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.detailButton.emby-button:not(.btnPlay):hover {
+.layout-desktop .detailButton.emby-button:not(.btnPlay):hover {
     background-color: #333333 !important;
     transform: scale(1.05);
 }
 
-/* Stil specific pentru butonul principal de redare (clasa .btnPlay) */
-.btnPlay {
-  background-color: #FFFFFF !important; /* Chenar alb */
-  color: #000000 !important; /* Text/iconiță negru închis */
-  border-radius: 50% !important; /* Colțuri rotunde (nu cerc complet) */
-  padding: 0 !important;
-  width: 60px; /* Dimensiune fixă pentru cerc */
-  height: 60px; /* Dimensiune fixă pentru cerc */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-
+/* Play button */
+.layout-desktop .btnPlay {
+    border-radius: 2em;
+    background-color: white;
 }
 
-.btnPlay:hover {
+.layout-desktop .btnPlay:hover {
     background-color: #f0f0f0 !important;
 }
 
-/* Stil pentru iconițe, asigurându-le dimensiunea corectă */
-.detailButton-icon {
-    font-size: 24px;
+.layout-desktop .btnPlay::after {
+    content: attr(title);
+    margin: 0 10px 0 2px;
+    color: black;
 }
 
-/* 1. Importă fontul Montserrat de pe serverele Google */
+.layout-desktop .material-icons.detailButton-icon.play_arrow {
+    color: black;
+}
+
+.layout-desktop .btnPlay.detailButton {
+    flex-direction: row;
+}
+
+.layout-desktop .listViewUserDataButtons {
+    display: none;
+}
+
+/* Resume */
+.layout-desktop button.detailButton[data-action="resume"] {
+    background-color: #ffffff !important; 
+    color: white !important;
+}
+
+/* Fonturi */
 @import url('fonts.googleapis.com');
 
-/* 2. Aplică setările pe întreaga interfață */
-body, h1, h2, h3, h4, h5, h6, p, a, .cardText, .textActionButton, .itemName {
-    /* Folosește Montserrat, iar dacă nu se încarcă, folosește alternativele standard */
-    font-family: 'Montserrat', sans-serif !important; 
-    
-    color: #ffffff !important; /* Alb pur */
-    font-weight: 350 !important; /* Îngroșat (Bold) */
-    text-shadow: 
-        -1px -1px 0 #000,  
+.layout-desktop body,
+.layout-desktop h1,
+.layout-desktop h2,
+.layout-desktop h3,
+.layout-desktop h4,
+.layout-desktop h5,
+.layout-desktop h6,
+.layout-desktop p,
+.layout-desktop a,
+.layout-desktop .cardText,
+.layout-desktop .textActionButton,
+.layout-desktop .itemName {
+    font-family: 'Montserrat', sans-serif !important;
+    color: #ffffff !important;
+    font-weight: 350 !important;
+    text-shadow:
+        px px 0 #000,
          1px -1px 0 #000,
         -1px  1px 0 #000,
-         1px  1px 0 #000 !important;    
-    
+         1px  1px 0 #000 !important;
 }
 
-/* 3. Ajustări specifice pentru titlurile de filme pe pagini (să fie și mai de impact) */
-.itemName {
-    font-weight: 700 !important; /* Extra bold pentru titluri */
-    text-transform: ; /* Opțional: face titlurile cu majuscule pentru un look cinema */
-    letter-spacing: 1px; /* Spațiere ușoară între litere */
+.layout-desktop .itemName {
+    font-weight: 700 !important;
+    letter-spacing: 1px;
 }
 
-/* 4. Asigură-te că și descrierile sunt lizibile */
-.overview {
-    font-weight: 300 !important; /* Descrierea e mai bine să fie puțin mai subțire decât titlul */
+.layout-desktop .overview {
+    font-weight: 300 !important;
     font-size: 1.1em;
 }
 
-/* Home Page Logo*/
-.pageTitleWithLogo {
-background-image: url(https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/heads/main/Logo.png) !important; }
-
-/* Stiluri pentru butonul specific de Resume/Redare de pe pagina de detalii */
-button.detailButton[data-action="resume"] {
-    background-color: #ffffff !important; 
-    color: white !important;
-    border-radius: 40px !important; /* Colțuri rotunjite */
-    padding: 0px 60px !important; /* Spațiere */
-    /* Configurăm containerul principal să fie inline-flex pentru a se comporta ca un singur bloc */
-    display: inline-flex !important; 
-    align-items: center !important; /* Aliniază vertical elementele din centru */
-    justify-content: center !important;
+/* Home logo */
+.layout-desktop .pageTitleWithLogo {
+    background-image: url(https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/heads/main/Logo.png) !important;
 }
 
-/* Stiluri pentru cercul alb din jurul pictogramei */
-button.detailButton[data-action="resume"] .detailButton-icon.play_arrow {
-    background-color: black !important; /* Fundal alb */
-    border-radius: 50% !important; /* Cerc */
-    width: 32px !important;
-    height: 32px !important;
-    /* Aliniază simbolul play în centrul cercului */
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    color: #ffffff !important; 
-    font-size: 20px !important;
-}
-
-/* Containerul de conținut va folosi, de asemenea, flexbox pentru a se asigura că totul stă pe un rând */
-button.detailButton[data-action="resume"] .detailButton-content {
-    display: flex !important;
-    align-items: center !important;
-    flex-direction: row !important; /* Forțează dispunerea pe rând (orizontală) */
-}
-
-/* Adaugă textul "Play" lângă pictogramă */
-button.detailButton[data-action="resume"] .detailButton-content:after {
-    color: #000000 !important;
-    content: "Play" !important;
-    font-size: 20px !important;
-    font-weight: bold !important;
-    margin-left: 8px !important; /* Spațiu între cerc și text */
-    line-height: normal !important;
-}
-
-/* Stil general butoane player */
-.osdControls .paper-icon-button-light {
+/* Player OSD */
+.layout-desktop .osdControls .paper-icon-button-light {
     color: #ffffff !important;
     transition: all 0.2s ease-in-out !important;
     background: rgba(255, 255, 255, 0.05) !important;
@@ -196,83 +174,76 @@ button.detailButton[data-action="resume"] .detailButton-content:after {
     margin: 0 5px !important;
 }
 
-/* Culoarea de selecție (Focus) pe TV */
-.osdControls .paper-icon-button-light:focus {
-    background: #ffffff !important; /* Fundal alb la selecție */
-    color: #000000 !important;    /* Iconița devine neagră */
-    transform: scale(1.2);         /* Butonul se mărește */
+.layout-desktop .osdControls .paper-icon-button-light:focus {
+    background: #ffffff !important;
+    color: #000000 !important;
+    transform: scale(1.2);
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
 }
 
-/* Butonul de Play/Pause să fie puțin mai mare */
-.btnPause {
+.layout-desktop .btnPause {
     transform: scale(1.3);
     margin: 0 15px !important;
 }
-.btnPause:focus {
+
+.layout-desktop .btnPause:focus {
     transform: scale(1.5) !important;
 }
 
-/* Fundalul barei (partea nevizionată) */
-.osdPositionSlider .mdl-slider-background-upper {
+.layout-desktop .osdPositionSlider .mdl-slider-background-upper {
     background: rgba(255, 255, 255, 0.2) !important;
 }
 
-/* Partea vizionată (Progresul) */
-.osdPositionSlider .mdl-slider-background-lower {
-    background: #ff0000 !important; /* O facem albă pentru un look minimalist */
+.layout-desktop .osdPositionSlider .mdl-slider-background-lower {
+    background: #ff0000 !important;
 }
 
-/* Cercul (Thumb-ul) care arată unde ești cu filmul */
-.osdPositionSlider::-webkit-slider-thumb {
-    background: #ffffff !important;
-    border: 2px solid #000;
-}
-
-.sliderMarker {
+.layout-desktop .sliderMarker {
     width: 4px !important;
-    background-color: #f7d117 !important; /* Un galben elegant pentru marcaje intro */
+    background-color: #f7d117 !important;
     opacity: 0.8;
 }
 
-.osdTimeText, .startTimeText, .endTimeText {
+.layout-desktop .osdTimeText,
+.layout-desktop .startTimeText,
+.layout-desktop .endTimeText {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.7) !important;
 }
 
-/* 1. Stilul de bază al butonului (pentru a asigura contrastul cu textul alb) */
-.skip-button {
-    background: rgba(40, 40, 40, 0.8) !important; /* Gri închis elegant */
+/* Skip button */
+.layout-desktop .skip-button {
+    background: rgba(40, 40, 40, 0.8) !important;
     color: #ffffff !important;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
     transition: all 0.3s ease;
 }
 
-/* 2. Culoarea când este SELECTAT (în loc de albastru) */
-/* Folosim o culoare elegantă de accent (ex: un auriu discret sau un gri deschis) */
-.skip-button:focus {
-    background: #e2e2e2 !important; /* Fundal alb-murdar/gri deschis la selecție */
-    color: #000000 !important;       /* Text negru pentru contrast maxim pe selecție */
+.layout-desktop .skip-button:focus {
+    background: #e2e2e2 !important;
+    color: #000000 !important;
     border-color: #ffffff !important;
-    transform: scale(1.1);            /* Se mărește ușor pentru a confirma selecția */
+    transform: scale(1.1);
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
-    outline: none !important;         /* Elimină conturul albastru implicit */
+    outline: none !important;
 }
 
-/* Fă fundalul elementului selectat complet transparent */
-.listItem.itemAction.focused, .listItem.itemAction:focus, .listItem.itemAction:hover {
-  background-color: transparent !important;
-  box-shadow: none !important; /* Opțional: elimină efectul de strălucire dacă există */
+.layout-desktop .listItem.itemAction.focused,
+.layout-desktop .listItem.itemAction:focus,
+.layout-desktop .listItem.itemAction:hover {
+    background-color: transparent !important;
+    box-shadow: none !important;
 }
 
-/* Ascunde bara de derulare pentru toate elementele din interfata web */
+/* Scrollbar – global (nu poate fi scoped corect) */
 ::-webkit-scrollbar {
     display: none !important;
 }
 
-/* Ascunde bara de derulare pentru standardul Firefox */
 * {
-    scrollbar-width: none !important; /* Firefox */
+    scrollbar-width: none !important;
 }
+
+@import url("https://iulian-svg.github.io/Jelly/tv.css");
