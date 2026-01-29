@@ -1,0 +1,401 @@
+/* ========================== */
+     /* SCOPE PHONE ONLY */
+/* ========================== */
+
+/* Afișare Logo și poziționarea acestuia */
+.layout-mobile .detailLogo {
+    display: block;
+    width: 15em;
+    left: 5%;
+    top: 17vh;
+    position: absolute !important; /* Necesar pentru ca z-index să funcționeze */
+    z-index: 2 !important; /* Valoare mai mare decât z-index: 1 al gradientului */
+}
+
+.layout-mobile .infoWrapper {
+    padding-left: 0;
+    margin-top: 6em;
+}
+
+.layout-mobile .itemMiscInfo,
+.layout-mobile .itemName,
+.layout-mobile .mainDetailButtons,
+.layout-mobile .parentName {
+    text-align: left;
+}
+
+.layout-mobile .itemMiscInfo, 
+.layout-mobile .itemName, 
+.layout-mobile .mainDetailButtons, 
+.layout-mobile .parentName {
+    justify-content: left;
+    text-align: left;
+}
+
+/* Titlu Original și eliminarea titlului actual */
+.layout-mobile .itemName.parentNameLast.withOriginalTitle {
+    margin: 0.6em 0;
+}
+
+/* Mutare la stânga a containerului de butoane pentru film */
+.layout-mobile .mainDetailButtons {
+    padding-left: 0;
+}
+
+/* Ajustare padding și margin, mărire dimensiune fanart și adăugare gradient */
+.layout-mobile .itemBackdrop {
+    height: 40vh;/*30*/
+    margin-top: 0;
+}
+
+.layout-mobile .itemBackdrop::before {
+    content: '';
+    right: 0;
+    left: 0;
+    /*top: 0;*/
+    bottom: 0;
+    height: 25vh;
+    position: absolute;
+    z-index: -1;
+    /*background: linear-gradient(0deg, #181818 15%, #18181800 65%);*/
+    background: linear-gradient(0deg, #181818 10%, #18181800 65%);
+}
+
+.layout-mobile .detailPageWrapperContainer {
+  top: -5em;
+}
+
+.layout-mobile .infoWrapper {
+    margin-top: 0;
+}
+
+.layout-mobile .itemName.parentNameLast.withOriginalTitle {
+    margin: 0 0 0.6em 0;
+}
+
+.layout-mobile .detailPageSecondaryContainer {
+    margin: 0 0 1em 0;
+}
+
+.layout-mobile .overview-expand {
+    padding: 0 1em 0.3em 1em;
+}
+
+/* Buton redare (play) */
+.layout-mobile .mainDetailButtons {
+  margin-top: 1.5em;
+}
+
+.layout-mobile .btnPlay {
+  border-radius: 2em;
+  /*width: 7vw;*/
+  background-color: white;
+  /*padding: 0.4em!important;*/
+  /*margin-right: 30%!important;*/
+}
+
+.layout-mobile .btnPlay::after {
+  content : attr(title);
+  margin: 0 10px 0 2px;
+  color: black;
+}
+
+.layout-mobile .btnPlay.detailButton {
+  flex-direction: row;
+}
+
+.layout-mobile .btnShuffle,
+.layout-desktop .btnShuffle {
+  display: none;
+}
+
+.layout-mobile .material-icons.detailButton-icon.play_arrow {
+  color: black;
+}
+
+.layout-mobile .listViewUserDataButtons {
+  display: none;
+}
+
+.layout-mobile .listItem-content {
+  display: block;
+}
+
+.layout-mobile .listItem-content .listItemBody {
+  padding: 0.85em 0;
+}
+
+.layout-mobile .listItem-content .listItemImage-large {
+  height: 30vw;
+  width: 86vw;
+}
+
+.layout-mobile .listItem-content .listItemImage-large .listItemImageButton, .listItemIndicators {
+  font-size: 1em!important;
+}
+
+.layout-mobile .listItem-bottomoverview {
+  font-size: 100%;
+}
+
+.layout-mobile .detailPagePrimaryContent {
+  position: relative;
+  margin-top: 1em;
+}
+
+.layout-mobile .mainDetailButtons {
+    justify-content: flex-start !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+    text-align: left !important;
+}
+
+
+.layout-mobile .infoWrapper {
+    display: none !important;
+}
+
+.layout-mobile .detailRibbon {
+    margin-top: -1vh !important; /* Ajustează valoarea (10, 20, 30) până ajunge unde vrei */
+}
+
+
+
+/* Gradient complet transparent */
+.layout-mobile .detailRibbon {
+    background: transparent !important; /* Elimină orice gradient sau culoare */
+    background-image: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+/* Asigură transparența containerului principal */
+.layout-mobile .detailPagePrimaryContainer {
+    background: transparent !important;
+    background-color: rgba(0, 0, 0, 0) !important;
+}
+
+/* Elimină orice fundal de tip overlay/întunecare */
+.layout-mobile .layout-mobile .detailPageWrapperContainer {
+    background: transparent !important;
+}
+
+/* overlay / degradat peste imagine */
+.layout-mobile .itemBackdrop::before {
+    content: '';
+    right: 0;
+    left: 0;
+    bottom: 0px;
+    height: 30vh; /* Mărit pentru o tranziție mai lungă */
+    position: absolute;
+    z-index: 1; /* Asigură că overlay-ul este peste imagine */
+    /* Tranziție mai subtilă, începe mai de sus */
+    background: linear-gradient(0deg, #1d1d1d 0%, rgba(24, 24, 24, 0) 100%);
+}
+
+.layout-mobile .detailPagePrimaryContent {
+    background: linear-gradient(to bottom, #1d1d1d 0%, transparent 100%) !important;
+    position: relative !important;
+    top: -1.5em !important; 
+}
+
+/* Containerul real al titlului */
+.layout-mobile .cardText,
+.layout-mobile .textActionButton,
+.layout-mobile .itemName {
+    display: none !important;
+}
+
+/* Rotunjire carduri - Safe pentru TV */
+.layout-mobile .cardScalable {
+    clip-path: inset(0 round 12px);
+}
+
+/* Fundal global - Am folosit background-color ca fallback pentru rapiditate */
+.layout-mobile .backgroundContainer,
+.layout-mobile .dialog,
+.layout-mobile html {
+  background-image: url("https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/heads/main/Background6.jpg") !important;  
+}
+
+/* Header optimizat cu gradient */
+.layout-mobile .skinHeader.focuscontainer-x.skinHeader-withBackground.skinHeader-blurred {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  height: 50px;
+}
+
+/* Fundal Image */
+.layout-mobile .backgroundContainer {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));                  
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+/* Darken Background când există Backdrop */
+.layout-mobile .backgroundContainer.withBackdrop {
+    background: rgba(0, 0, 0, 0.5) !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+/* Stiluri Inputuri */
+.layout-mobile .emby-input,
+.layout-mobile .emby-textarea,
+.layout-mobile .emby-select {
+    background: rgba(0, 0, 0, 0.3);
+    border-color: transparent !important;
+}
+
+/* Ascundere butoane inutile */
+.layout-mobile .headerCastButton,
+.layout-mobile .headerSyncButton {
+  display: none;
+}
+
+/* Eliminare focus border */
+.layout-mobile .emby-input:focus,
+.layout-mobile .emby-textarea:focus,
+.layout-mobile .emby-select-withcolor {
+  border-color: transparent !important;
+}
+
+/* Font */
+@import url('fonts.googleapis.com');
+
+.layout-mobile body,
+.layout-mobile h1,
+.layout-mobile h2,
+.layout-mobile h3,
+.layout-mobile h4,
+.layout-mobile h5,
+.layout-mobile h6,
+.layout-mobile p,
+.layout-mobile a,
+.layout-mobile .cardText,
+.layout-mobile .textActionButton,
+.layout-mobile .itemName {
+    font-family: 'Montserrat', sans-serif !important; 
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    text-shadow: 
+         px px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000 !important;    
+}
+
+
+/* Titluri */
+.layout-mobile .itemName {
+    font-weight: 1000 !important;
+    text-transform: ;
+    letter-spacing: 1px;
+}
+
+/* Descriere */
+.layout-mobile .overview {
+    font-weight: 300 !important;
+    font-size: 1.1em;
+}
+
+/* Home Page Logo */
+.layout-mobile .pageTitleWithLogo {
+    background-image: url(https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/heads/main/Logo.png) !important;
+}
+
+/* Player buttons */
+.layout-mobile .osdControls .paper-icon-button-light {
+    color: #ffffff !important;
+    transition: all 0.2s ease-in-out !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-radius: 50% !important;
+    margin: 0 5px !important;
+}
+
+.layout-mobile .osdControls .paper-icon-button-light:focus {
+    background: #ffffff !important;
+    color: #000000 !important;
+    transform: scale(1.2);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+.layout-mobile .btnPause {
+    transform: scale(1.3);
+    margin: 0 15px !important;
+}
+
+.layout-mobile .btnPause:focus {
+    transform: scale(1.5) !important;
+}
+
+/* Slider */
+.layout-mobile .osdPositionSlider .mdl-slider-background-upper {
+    background: rgba(255, 255, 255, 0.2) !important;
+}
+
+.layout-mobile .osdPositionSlider .mdl-slider-background-lower {
+    background: #ff0000 !important;
+}
+
+.layout-mobile .osdPositionSlider::-webkit-slider-thumb {
+    background: #ffffff !important;
+    border: 2px solid #000;
+}
+
+.layout-mobile .sliderMarker {
+    width: 4px !important;
+    background-color: #f7d117 !important;
+    opacity: 0.8;
+}
+
+.layout-mobile .osdTimeText,
+.layout-mobile .startTimeText,
+.layout-mobile .endTimeText {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Skip button */
+.layout-mobile .skip-button {
+    background: rgba(40, 40, 40, 0.8) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    transition: all 0.3s ease;
+}
+
+.layout-mobile .skip-button:focus {
+    background: #e2e2e2 !important;
+    color: #000000 !important;
+    border-color: #ffffff !important;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    outline: none !important;
+}
+
+/* List items */
+.layout-mobile .listItem.itemAction.focused,
+.layout-mobile .listItem.itemAction:focus,
+.layout-mobile .listItem.itemAction:hover {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Scrollbar */
+.layout-mobile ::-webkit-scrollbar {
+    display: none !important;
+}
+
+.layout-mobile * {
+    scrollbar-width: none !important;
+}
+
+
+
