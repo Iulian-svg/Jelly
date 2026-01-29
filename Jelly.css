@@ -1,15 +1,50 @@
-/* ===================== */
-/* PC ONLY – layout-desktop */
-/* ===================== */
+/* ========================== */
+         /* GENERAL */
+/* ========================== */
+
+
+
+/* Fundal global */
+.backgroundContainer,
+.dialog {
+    background-image: url("https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/heads/main/Background6.jpg") !important;  
+}
+
+/* Fundal image */
+.backgroundContainer {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));                  
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+/* Backdrop */
+.backgroundContainer.withBackdrop {
+    background: rgba(0, 0, 0, 0.5) !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+.backgroundContainer.withBackdrop:has(~ .mainAnimatedPages > .homePage:not(.hide)) {
+    background-image: url("https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/heads/main/Background6.jpg") !important;  
+}
+
+/* Scrollbar – global (nu poate fi scoped corect) */
+::-webkit-scrollbar {
+    display: none !important;
+}
+
+* {
+    scrollbar-width: none !important;
+}
+
+/* ========================== */
+         /* Desktop */
+/* ========================== */
 
 .layout-desktop .cardScalable {
     clip-path: inset(0 round 12px);
-}
-
-/* Fundal global */
-.layout-desktop .backgroundContainer,
-.layout-desktop .dialog {
-    background-image: url("https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/heads/main/Background6.jpg") !important;  
 }
 
 /* Header */
@@ -20,26 +55,6 @@
     box-shadow: none !important;
     border: none !important;
     height: 60px;
-}
-
-/* Fundal image */
-.layout-desktop .backgroundContainer {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));                  
-    background-size: cover !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-}
-
-/* Backdrop */
-.layout-desktop .backgroundContainer.withBackdrop {
-    background: rgba(0, 0, 0, 0.5) !important;
-    background-size: cover !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-}
-
-.layout-desktop .backgroundContainer.withBackdrop:has(~ .mainAnimatedPages > .homePage:not(.hide)) {
-    background-image: url("https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/heads/main/Background6.jpg") !important;  
 }
 
 /* Inputuri */
@@ -237,15 +252,6 @@
     box-shadow: none !important;
 }
 
-/* Scrollbar – global (nu poate fi scoped corect) */
-::-webkit-scrollbar {
-    display: none !important;
-}
-
-* {
-    scrollbar-width: none !important;
-}
-
 /* ========================= */
       /* SCOPE TV ONLY */
 /* ========================= */
@@ -253,13 +259,6 @@
 /* Rotunjire carduri - Safe pentru TV */
 .layout-tv .cardScalable {
     clip-path: inset(0 round 12px);
-}
-
-/* Fundal global - Am folosit background-color ca fallback pentru rapiditate */
-.layout-tv .backgroundContainer,
-.layout-tv .dialog,
-.layout-tv html {
-  background-image: url("https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/heads/main/Background6.jpg") !important;  
 }
 
 /* Header optimizat - Am corectat "impornatn" și am simplificat */
@@ -270,26 +269,6 @@
   box-shadow: none !important;
   border: none !important;
   height: 100px;
-}
-
-/* Fundal Image - Corectat sintaxa (era o virgulă greșită) */
-.layout-tv .backgroundContainer {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));                  
-    background-size: cover !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-}
-
-/* Darken Background când există Backdrop */
-.layout-tv .backgroundContainer.withBackdrop {
-    background: rgba(0, 0, 0, 0.5) !important;
-    background-size: cover !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-}
-
-.layout-tv .backgroundContainer.withBackdrop:has(~ .mainAnimatedPages > .homePage:not(.hide)) {
-  background-image: url("https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/heads/main/Background6.jpg") !important;  
 }
 
 /* Stiluri Inputuri */
@@ -714,8 +693,6 @@ background-image: url(https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/he
     margin-top: -1vh !important; /* Ajustează valoarea (10, 20, 30) până ajunge unde vrei */
 }
 
-
-
 /* Gradient complet transparent */
 .layout-mobile .detailRibbon {
     background: transparent !important; /* Elimină orice gradient sau culoare */
@@ -766,13 +743,6 @@ background-image: url(https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/he
     clip-path: inset(0 round 12px);
 }
 
-/* Fundal global - Am folosit background-color ca fallback pentru rapiditate */
-.layout-mobile .backgroundContainer,
-.layout-mobile .dialog,
-.layout-mobile html {
-  background-image: url("https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/heads/main/Background6.jpg") !important;  
-}
-
 /* Header optimizat cu gradient */
 .layout-mobile .skinHeader.focuscontainer-x.skinHeader-withBackground.skinHeader-blurred {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%) !important;
@@ -781,22 +751,6 @@ background-image: url(https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/he
   box-shadow: none !important;
   border: none !important;
   height: 50px;
-}
-
-/* Fundal Image */
-.layout-mobile .backgroundContainer {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));                  
-    background-size: cover !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-}
-
-/* Darken Background când există Backdrop */
-.layout-mobile .backgroundContainer.withBackdrop {
-    background: rgba(0, 0, 0, 0.5) !important;
-    background-size: cover !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
 }
 
 /* Stiluri Inputuri */
@@ -942,19 +896,3 @@ background-image: url(https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/he
   background-color: transparent !important;
   box-shadow: none !important;
 }
-
-/* Scrollbar */
-.layout-mobile ::-webkit-scrollbar {
-    display: none !important;
-}
-
-.layout-mobile * {
-    scrollbar-width: none !important;
-}
-
-
-
-
-
-@import url("https://iulian-svg.github.io/Jelly/tv.css");
-@import url("https://iulian-svg.github.io/Jelly/phone.css");
