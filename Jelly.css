@@ -312,7 +312,7 @@
 
 /*Elimina Bordura si adauga effect zoom in*\
 .layout-tv .cardScalable {
-   border: none !important;
+    border: none !important;
 }
 
 .layout-tv .card {
