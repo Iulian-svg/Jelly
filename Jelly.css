@@ -310,7 +310,7 @@
     display: none !important;
 }
 
-/*Elimina Bordura si adauga effect zoom in*\
+/* Elimina Bordura si adauga effect zoom in */
 .layout-tv .cardScalable {
     border: none !important;
 }
