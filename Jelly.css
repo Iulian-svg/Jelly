@@ -2,6 +2,42 @@
          /* GENERAL */
 /* ========================== */
 
+/* Butoane Meniu */
+.btnSave {
+    border-radius: 10px !important;
+}
+
+.emby-select {
+    border-radius: 10px !important;
+}
+
+.emby-input {
+    border-radius: 10px !important;
+}
+
+#myPreferencesMenuPage .listItem {
+    background-color: transparent !important;
+    background: none !important;
+}
+
+#myPreferencesMenuPage .emby-button:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 10px !important;
+}
+
+#myPreferencesMenuPage .emby-button,
+#myPreferencesMenuPage .listItem,
+#myPreferencesMenuPage .listItem-border {
+    background-color: transparent !important;
+    border: none !important;
+    border-radius: 15px !important; /* Rotunjire pentru focus */
+}
+
+#myPreferencesMenuPage .emby-button:focus {
+    background-color: rgba(255, 255, 255, 0.15) !important; /* Fundal subtil la selecție */
+    transform: scale(1.02); /* Efect ușor de mărire specific TV-urilor */
+}
+
 /* Fundal global */
 .backgroundContainer,
 .dialog {
@@ -250,13 +286,6 @@
     box-shadow: none !important;
 }
 
-/* Containerul real al titlului */
-.layout-tv .cardText,
-.layout-tv .textActionButton,
-.layout-tv .itemName {
-    display: none !important;
-}
-
 /* ========================= */
       /* SCOPE TV ONLY */
 /* ========================= */
@@ -348,7 +377,6 @@
   color: #FFFFFF !important;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
-
 
 .layout-tv .detailButton.emby-button:not(.btnPlay):hover {
     background-color: #333333 !important;
@@ -525,8 +553,6 @@ background-image: url(https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/he
   box-shadow: none !important;
 }
 
-
-
 /* Aplică o lățime maximă consistentă și centrează toate secțiunile principale */
 .layout-tv .detailPagePrimaryContainer,
 .layout-tv .verticalSection.detailVerticalSection {
@@ -544,8 +570,6 @@ background-image: url(https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/he
   padding-left: 20px !important; /* Aliniere fixă, ca la litera T din titlu */
   padding-right: 20px !important;
 }
-
-
 
 /* Ascunde containerul care conține imaginea și pânza de blur */
 .layout-tv .detailImageContainer.hide-mobile,
@@ -795,13 +819,6 @@ background-image: url(https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/he
     background: linear-gradient(to bottom, #1d1d1d 0%, transparent 100%) !important;
     position: relative !important;
     top: -1.5em !important; 
-}
-
-/* Containerul real al titlului */
-.layout-mobile .cardText,
-.layout-mobile .textActionButton,
-.layout-mobile .itemName {
-    display: none !important;
 }
 
 /* Rotunjire carduri - Safe pentru TV */
