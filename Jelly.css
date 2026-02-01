@@ -909,9 +909,9 @@ background-image: url(https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/he
 .layout-mobile .cardText,
 .layout-mobile .textActionButton,
 .layout-mobile .itemName {
-    font-family: 'Montserrat', sans-serif !important; 
+    font-family: 'Plus Jakarta Sans', sans-serif !important; 
     color: #ffffff !important;
-    font-weight: 600 !important;
+    font-weight: 400 !important;
     text-shadow: 
          px px 0 #000,  
          1px -1px 0 #000,
