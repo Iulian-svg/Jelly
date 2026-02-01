@@ -189,9 +189,9 @@
 .layout-desktop .cardText,
 .layout-desktop .textActionButton,
 .layout-desktop .itemName {
-    font-family: 'Montserrat', sans-serif !important;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
     color: #ffffff !important;
-    font-weight: 350 !important;
+    font-weight: 400 !important;
     text-shadow:
         px px 0 #000,
          1px -1px 0 #000,
@@ -457,9 +457,9 @@
 .layout-tv .cardText,
 .layout-tv .textActionButton,
 .layout-tv .itemName {
-    font-family: 'Montserrat', sans-serif !important; 
+    font-family: 'Plus Jakarta Sans', sans-serif !important; 
     color: #ffffff !important;
-    font-weight: 350 !important;
+    font-weight: 400 !important;
     text-shadow: 
         px px 0 #000,  
          1px -1px 0 #000,
@@ -468,8 +468,10 @@
 }
 
 /* Titluri */
+.layout-tv h4.itemName,
 .layout-tv h1.itemName {
-    font-weight: 700 !important;
+    font-weight: 500 !important;
+    font-size: 32px;     
     text-transform: ;
     letter-spacing: 1px;
 }
@@ -605,15 +607,13 @@ background-image: url(https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/he
 
 /* Ascunde imaginea de fundal (backdrop), titlul serialului și informațiile despre episod */
 .layout-tv form.trackSelections,
-.layout-tv .detailImageContainer, 
-.layout-tv .parentName, 
+.layout-tv .detailImageContainer,  
 .layout-tv .endsAt, 
 .layout-tv .itemMiscInfo-secondary,
 .layout-tv .writersGroup,
 .layout-tv .itemDetailsGroup,
 .layout-tv .itemTags,
-.layout-tv .withOriginalTitle,
-.layout-tv .originalTitle  {
+.layout-tv .withOriginalTitle {
     display: none !important;
 }
 
