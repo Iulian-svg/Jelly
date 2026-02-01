@@ -290,12 +290,22 @@
       /* SCOPE TV ONLY */
 /* ========================= */
 
-/* Rotunjire carduri - Safe pentru TV */
+/* Rotunjire carduri si Tranzitie */
 .layout-tv .cardScalable {
     border-radius: 12px !important; /* Folosim border-radius în loc de clip-path */
     overflow: hidden !important;
     border: none !important;
-    transition: box-shadow 0.4s ease-in-out, transform 0.4s ease-in-out !important;
+}
+
+.layout-tv .card {
+   /* Adauga tranzitie lina pentru animatie */
+   transition: transform 0.2s ease-out;
+   transform: scale(0.9);
+}
+
+.layout-tv .card:focus {
+   transform: scale(1);
+   z-index: 10;
 }
 
 /* Header optimizat - Am corectat "impornatn" și am simplificat */
@@ -340,22 +350,6 @@
 /* Ascunde butoanele din dreapta care nu mai sunt necesare în acest format */
 .layout-tv .listViewUserDataButtons {
     display: none !important;
-}
-
-/* Elimina bordura si pregateste tranzitia */
-.layout-tv .cardScalable {
-    border: none !important;
-    transition: box-shadow 0.4s ease-in-out !important;
-}
-
-/* Efectul de Glow Alb in spatele cardului focusat */
-.layout-tv .card:focus .cardScalable,
-.layout-tv .card:hover .cardScalable {
-    /* Umbra alba difuza: x, y, blur, spread, culoare */
-    box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.6) !important;
-    /* Ridicam cardul deasupra celorlalte pentru ca glow-ul sa fie vizibil peste ele */
-    z-index: 10;
-    position: relative;
 }
 
 /* Eliminare focus border pentru un aspect mai curat pe TV */
@@ -646,7 +640,7 @@ background-image: url(https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/he
 
 /* Optional: Ajustează fundalul daca raman goluri inestetice */
 .layout-tv .detailPageWrapperContainer {
-    margin-top: 20px;
+    margin-top: 30px;
 } 
 
 /* ========================== */
