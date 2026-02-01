@@ -358,7 +358,7 @@
 /* Aplică zoom-ul DOAR pe interiorul cardului (Scalable) */
 .layout-tv .card:focus .cardScalable,
 .layout-tv .card:hover .cardScalable {
-    transform: scale(1) !important;
+    transform: scale(1.2) !important;
     z-index: 10;
 }
 
@@ -656,7 +656,7 @@ background-image: url(https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/he
 
 /* Optional: Ajustează fundalul daca raman goluri inestetice */
 .layout-tv .detailPageWrapperContainer {
-    margin-top: -50px;
+    margin-top: -20px;
 } 
 
 /* ========================== */
