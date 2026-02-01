@@ -294,18 +294,7 @@
 .layout-tv .cardScalable {
     border-radius: 12px !important; /* Folosim border-radius în loc de clip-path */
     overflow: hidden !important;
-    border: none !important;
-}
-
-.layout-tv .card {
-   /* Adauga tranzitie lina pentru animatie */
-   transition: transform 0.2s ease-out;
-   transform: scale(0.9);
-}
-
-.layout-tv .card:focus {
-   transform: scale(1);
-   z-index: 10;
+    border: 5px solid transparent !important;
 }
 
 /* Header optimizat - Am corectat "impornatn" și am simplificat */
