@@ -292,7 +292,10 @@
 
 /* Rotunjire carduri - Safe pentru TV */
 .layout-tv .cardScalable {
-    clip-path: inset(0 round 12px);
+    border-radius: 12px !important; /* Folosim border-radius în loc de clip-path */
+    overflow: hidden !important;
+    border: none !important;
+    transition: box-shadow 0.4s ease-in-out, transform 0.4s ease-in-out !important;
 }
 
 /* Header optimizat - Am corectat "impornatn" și am simplificat */
@@ -339,32 +342,20 @@
     display: none !important;
 }
 
-/* Elimina Bordura si adauga effect zoom in */
+/* Elimina bordura si pregateste tranzitia */
 .layout-tv .cardScalable {
     border: none !important;
+    transition: box-shadow 0.4s ease-in-out !important;
 }
 
-.layout-tv .card {
-    /* Adaugă o tranziție lină pentru animație */
-    transition: transform 0.2s ease-out;
-    transform: scale(1); /* Starea normală */
-}
-
-/* Scoate zoom-ul de pe .card (asta strica scroll-ul) */
-.layout-tv .card {
-    transition: transform 0.5s ease-out;
-}
-
-/* Aplică zoom-ul DOAR pe interiorul cardului (Scalable) */
+/* Efectul de Glow Alb in spatele cardului focusat */
+.layout-tv .card:focus .cardScalable,
 .layout-tv .card:hover .cardScalable {
-    transform: scale(1.2) !important;
+    /* Umbra alba difuza: x, y, blur, spread, culoare */
+    box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.6) !important;
+    /* Ridicam cardul deasupra celorlalte pentru ca glow-ul sa fie vizibil peste ele */
     z-index: 10;
-}
-
-/* Asigură-te că imaginea nu iese urât din margini */
-.layout-tv .cardScalable {
-    transition: transform 0.5s ease-out;
-    overflow: hidden !important;
+    position: relative;
 }
 
 /* Eliminare focus border pentru un aspect mai curat pe TV */
