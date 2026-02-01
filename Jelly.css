@@ -350,11 +350,22 @@
     transform: scale(1); /* Starea normală */
 }
 
-.layout-tv .card:focus,
-.layout-tv .card:hover {
-    /* Mărește cardul (zoom) cu 5% când este selectat/cu mouse-ul deasupra */
-    transform: scale(1.05);
-    z-index: 10; /* Asigură că apare deasupra altor elemente */
+/* Scoate zoom-ul de pe .card (asta strica scroll-ul) */
+.layout-tv .card {
+    transition: transform 0.5s ease-out;
+}
+
+/* Aplică zoom-ul DOAR pe interiorul cardului (Scalable) */
+.layout-tv .card:focus .cardScalable,
+.layout-tv .card:hover .cardScalable {
+    transform: scale(1) !important;
+    z-index: 10;
+}
+
+/* Asigură-te că imaginea nu iese urât din margini */
+.layout-tv .cardScalable {
+    transition: transform 0.5s ease-out;
+    overflow: hidden !important;
 }
 
 /* Eliminare focus border pentru un aspect mai curat pe TV */
@@ -471,7 +482,7 @@
 
 /* Logo */
 .layout-tv .pageTitleWithLogo {
-background-image: url(https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/heads/main/Background6.png) !important; }
+background-image: url(https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/heads/main/Logo.png) !important; }
 
 /* Player buttons */
 .layout-tv .osdControls .paper-icon-button-light {
@@ -595,13 +606,39 @@ background-image: url(https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/he
 /* Ascunde imaginea de fundal (backdrop), titlul serialului și informațiile despre episod */
 .layout-tv form.trackSelections,
 .layout-tv .detailImageContainer, 
-.layout-tv .nameContainer, 
-.layout-tv .itemMiscInfo-primary, 
+.layout-tv .parentName, 
+.layout-tv .endsAt, 
 .layout-tv .itemMiscInfo-secondary,
 .layout-tv .writersGroup,
 .layout-tv .itemDetailsGroup,
-.layout-tv .itemTags {
+.layout-tv .itemTags,
+.layout-tv .withOriginalTitle,
+.layout-tv .originalTitle  {
     display: none !important;
+}
+
+/* Activează Flexbox pe containerul "panglică" pentru a permite reordonarea pe TV */
+.layout-tv .detailRibbon {
+    display: flex;
+    flex-direction: column ; /* Le așează pe verticală */
+    align-items: flex-start; /* Aliniază conținutul (butoane, info) la stânga */
+}
+
+/* Setează ordinea pentru butoane: vor fi primele (sus) */
+.layout-tv .mainDetailButtons {
+    order: 1; 
+    margin-bottom: 80px !important; /* Adaugă spațiu sub butoane */
+}
+
+/* Setează ordinea pentru informațiile de bază (titlu, sezon, rating): vor fi a doua (sub butoane) */
+.layout-tv .infoWrapper {
+    order: 2;
+}
+
+/* Setează ordinea pentru descriere (overview), și forțează marginile la 0 */
+.layout-tv .detailSection {
+    order: 3;
+    margin-top: -50px !important; /* Ajustează valoarea (negativă) pentru a o urca mai mult */ 
 }
 
 /* Logo Film si serial */
@@ -619,8 +656,8 @@ background-image: url(https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/he
 
 /* Optional: Ajustează fundalul daca raman goluri inestetice */
 .layout-tv .detailPageWrapperContainer {
-    top: 0;
-}
+    margin-top: -50px;
+} 
 
 /* ========================== */
      /* SCOPE PHONE ONLY */
