@@ -356,7 +356,6 @@
 }
 
 /* Aplică zoom-ul DOAR pe interiorul cardului (Scalable) */
-.layout-tv .card:focus .cardScalable,
 .layout-tv .card:hover .cardScalable {
     transform: scale(1.2) !important;
     z-index: 10;
