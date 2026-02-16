@@ -64,13 +64,14 @@
     background-image: url("https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/heads/main/Background6.jpg") !important;  
 }
 
-/* Scrollbar – global (nu poate fi scoped corect) */
+/* Ascunde vizual, dar păstrează scroll-ul funcțional */
 ::-webkit-scrollbar {
-    display: none !important;
+    width: 0px !important;
+    background: transparent !important;
 }
 
 * {
-    scrollbar-width: none !important;
+    scrollbar-width: thin !important; /* păstrează scroll, dar foarte subțire */
 }
 
 /* ========================== */
@@ -292,7 +293,7 @@
 
 /* Rotunjire carduri si Tranzitie */
 .layout-tv .cardScalable {
-    border-radius: 12px !important; /* Folosim border-radius în loc de clip-path */
+    border-radius: 10px !important; /* Folosim border-radius în loc de clip-path */
     overflow: hidden !important;
     border: 5px solid transparent !important;
 }
@@ -307,45 +308,21 @@
   height: 100px;
 }
 
-/* Stiluri Inputuri */
-.layout-tv .emby-input,
-.layout-tv .emby-textarea,
-.layout-tv .emby-select {
-    background: rgba(0, 0, 0, 0.3);
-    border-color: transparent !important;
+.layout-tv .nameContainer a {
+    pointer-events: none !important;
+}
+
+.layout-tv .nameContainer .focuscontainer-x,
+.layout-tv .nameContainer .show-focus {
+    outline: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
 }
 
 /* Ascundere butoane inutile pentru a elibera memoria interfeței */
 .layout-tv .headerCastButton,
 .layout-tv .headerSyncButton {
   display: none;
-}
-
-/*Intindere text sezoane*\
-/* Schimbă orientarea elementului listei de la orizontal la vertical (imagine sus, text jos) */
-.layout-tv .listItem {
-    flex-direction: row !important;
-    width: 1000px !important; /* Setează o lățime fixă pentru carduri, ajustați după nevoie */
-    margin: 10px !important; /* Adaugă spațiu între carduri */
-}
- 
-/* Forțează corpul textului să ocupe toată lățimea și aliniază textul central */
-.layout-tv .listItemBody {
-    width: 100% !important;
-    text-align: left !important; /* Centrează textul sub imagine */
-    padding: 10px 5px !important; /* Adaugă spațiu în jurul textului */
-}
-
-/* Ascunde butoanele din dreapta care nu mai sunt necesare în acest format */
-.layout-tv .listViewUserDataButtons {
-    display: none !important;
-}
-
-/* Eliminare focus border pentru un aspect mai curat pe TV */
-.layout-tv .emby-input:focus,
-.layout-tv .emby-textarea:focus,
-.layout-tv .emby-select-withcolor {
-  border-color: transparent !important;
 }
 
 /* Containerul principal - adaugă spațiu între butoane */
@@ -487,7 +464,7 @@ background-image: url(https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/he
 
 /* Slider */
 .layout-tv .osdPositionSlider .mdl-slider-background-upper {
-    background: rgba(255, 255, 255, 0.2) !important;
+    backgromaxund: 100500rgba(255, 255, 255, 0.2) !important;
 }
 
 .layout-tv .osdPositionSlider .mdl-slider-background-lower {
@@ -539,80 +516,118 @@ background-image: url(https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/he
   box-shadow: none !important;
 }
 
-/* Aplică o lățime maximă consistentă și centrează toate secțiunile principale */
-.layout-tv .detailPagePrimaryContainer,
-.layout-tv .verticalSection.detailVerticalSection {
-  max-width: 800px !important; /* Lățimea maximă a conținutului */
-  margin-left: 70px !important;
-  width: 100% !important;
-  margin-top: 70px !important;
+.layout-tv .detailLogo {
+  left: 5%;
+  background-position: top left;
 }
 
-/* Asigură că interiorul acestor secțiuni folosește spațierea corectă */
-.layout-tv .detailRibbon,
-.layout-tv .detailPagePrimaryContent,
-.layout-tv .detailImageContainer.hide-mobile,
-.layout-tv .emby-scrollbuttons {
-  padding-left: 20px !important; /* Aliniere fixă, ca la litera T din titlu */
-  padding-right: 20px !important;
+.layout-tv .itemBackdrop {
+  background-attachment: scroll;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 80vw;
+  position: relative;
+  right: -20%;
 }
 
-/* Ascunde containerul care conține imaginea și pânza de blur */
-.layout-tv .detailImageContainer.hide-mobile,
-.layout-tv .detailImageContainer.hide-desktop.hide-tv {
-  display: none !important;
+.layout-tv .itemBackdrop:after {
+  background: url("https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/heads/main/mask.png");
+  background-size: cover;
+  width: 100%;
+  height: 100%;
 }
 
-/* Setează o marjă stângă de 30px pe containerul interior care gestionează derularea */
-.layout-tv .itemsContainer.scrollSlider {
-  margin-left: 30px !important;
+.layout-tv .detailPageWrapperContainer {
+  margin-top: 25vh; /* inicial: 73 */
 }
 
-/* Resetează padding-ul pe containerul exterior la zero, pentru a nu se aduna cu marginea de sus */
-.layout-tv .emby-scroller.no-padding {
-  padding-left: 0px !important;
-}
-
-.layout-tv .nextUpSection, 
-.layout-tv .detailPageSecondaryContainer {
-  display: none !important;
-}
-
-/* Ascunde imaginea de fundal (backdrop), titlul serialului și informațiile despre episod */
-.layout-tv form.trackSelections,
-.layout-tv .detailImageContainer,  
-.layout-tv .endsAt, 
-.layout-tv .itemMiscInfo-secondary,
-.layout-tv .writersGroup,
-.layout-tv .itemDetailsGroup,
+.layout-tv .detailImageContainer .card,
 .layout-tv .itemTags,
-.layout-tv .withOriginalTitle {
-    display: none !important;
+.layout-tv .itemExternalLinks {
+  display: none ;
 }
 
-/* Activează Flexbox pe containerul "panglică" pentru a permite reordonarea pe TV */
-.layout-tv .detailRibbon {
-    display: flex;
-    flex-direction: column ; /* Le așează pe verticală */
-    align-items: flex-start; /* Aliniază conținutul (butoane, info) la stânga */
+.layout-tv .nameContainer,
+.layout-tv .itemMiscInfo {
+  display: none;
 }
 
-/* Setează ordinea pentru butoane: vor fi primele (sus) */
-.layout-tv .mainDetailButtons {
-    order: 1; 
-    margin-bottom: 80px !important; /* Adaugă spațiu sub butoane */
+.layout-tv .detailPageContent {
+  padding-left: 5%;
 }
 
-/* Setează ordinea pentru informațiile de bază (titlu, sezon, rating): vor fi a doua (sub butoane) */
-.layout-tv .infoWrapper {
-    order: 2;
+.layout-tv .detailPagePrimaryContent {
+  width: 90%;
 }
 
-/* Setează ordinea pentru descriere (overview), și forțează marginile la 0 */
-.layout-tv .detailSection {
-    order: 3;
-    margin-top: -50px !important; /* Ajustează valoarea (negativă) pentru a o urca mai mult */ 
+.layout-tv .listItemImage {
+    width: 350px !important; /* Ajustează mărimea pozei după preferință */
+    height: 250px !important;
+    flex-shrink: 0 !important; /* Împiedică imaginea să se micșoreze */
+    border-radius: 8px !important;
 }
+
+.layout-tv .overview {
+  width: 55%;
+}
+
+.layout-tv .detailPagePrimaryContainer {
+  display: inline-table;
+  z-index: 2;
+  left: -27%;
+}
+
+
+.layout-tv .detailPageSecondaryContainer, 
+.layout-tv .detailPagePrimaryContainer {
+  margin: 0 0 1.25em 0;
+}
+
+.layout-tv .itemDetailsGroup {
+  margin-top:  0;
+}
+
+.layout-tv a.overview-expand.emby-button {
+  margin: none;
+  padding: none;
+}
+
+.layout-tv form.trackSelections,
+.layout-tv .itemName.originalTitle {
+  display: none;
+}
+
+.layout-tv .itemName,
+.layout-mobile .itemName {
+  font-weight: normal;
+}
+
+/*  season section  */
+.layout-tv .vertical-list {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.layout-tv .listItem-withContentWrapper {
+  align-items: flex-start;
+  flex-direction: column;
+  width: 32%;
+}
+
+.layout-tv .listItem-content {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.layout-tv .listItemImage-large {
+  height: 16vw;
+  width: 100%;
+}
+
 
 /* Logo Film si serial */
 .layout-tv .detailLogo {
@@ -622,15 +637,9 @@ background-image: url(https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/he
     top: 17vh;
 } 
 
-/* Muta sectiunea de detalii mai jos */
-.layout-tv .detailRibbon {
-    margin-top: 250px !important; /* Ajustează valoarea (ex: 150px, 200px) după bunul plac */
+button[title="More"].btnMoreCommands {
+    display: none !important;
 }
-
-/* Optional: Ajustează fundalul daca raman goluri inestetice */
-.layout-tv .detailPageWrapperContainer {
-    margin-top: 30px;
-} 
 
 /* ========================== */
      /* SCOPE PHONE ONLY */
