@@ -637,7 +637,7 @@ background-image: url(https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/he
     top: 17vh;
 } 
 
-button[title="More"].btnMoreCommands {
+.layout-tv button[title="More"].btnMoreCommands {
     display: none !important;
 }
 
