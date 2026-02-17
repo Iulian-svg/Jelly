@@ -291,8 +291,6 @@
       /* SCOPE TV ONLY */
 /* ========================= */
 
-.layout-tv body { zoom: 0.9; }
-
 /* Rotunjire carduri si Tranzitie */
 .layout-tv .cardScalable {
     border-radius: 10px !important; /* Folosim border-radius în loc de clip-path */
