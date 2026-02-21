@@ -720,6 +720,10 @@ background-image: url(https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/he
     margin: 0 0 1em 0;
 }
 
+.trackSelections {
+    display: none;
+}
+
 .layout-mobile .overview-expand {
     padding: 0 1em 0.3em 1em;
 }
@@ -799,7 +803,8 @@ background-image: url(https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/he
 }
 
 .layout-mobile .detailRibbon {
-    margin-top: -1vh !important; /* Ajustează valoarea (10, 20, 30) până ajunge unde vrei */
+    margin-top: auto !important; /* Ajustează valoarea (10, 20, 30) până ajunge unde vrei */
+    justify-content: center;
 }
 
 /* Gradient complet transparent */
@@ -808,6 +813,7 @@ background-image: url(https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/he
     background-image: none !important;
     box-shadow: none !important;
     border: none !important;
+    max-height: 60px !important; 
 }
 
 /* Asigură transparența containerului principal */
@@ -831,7 +837,7 @@ background-image: url(https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/he
     position: absolute;
     z-index: 1; /* Asigură că overlay-ul este peste imagine */
     /* Tranziție mai subtilă, începe mai de sus */
-    background: linear-gradient(0deg, #1d1d1d 0%, rgba(24, 24, 24, 0) 100%);
+    background: linear-gradient(0deg, #1d1d1d 10%, rgba(24, 24, 24, 0) 100%);
 }
 
 .layout-mobile .detailPagePrimaryContent {
@@ -997,4 +1003,9 @@ background-image: url(https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/he
 .layout-mobile .listItem.itemAction:hover {
   background-color: transparent !important;
   box-shadow: none !important;
+}
+
+.layout-mobile .headerHomeButton,
+.layout-mobile .alphaPicker {
+    display: none;
 }
