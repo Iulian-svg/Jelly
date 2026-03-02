@@ -291,6 +291,23 @@
       /* SCOPE TV ONLY */
 /* ========================= */
 
+/* Bara progres cards */
+.layout-tv .itemProgressBar {
+    background: rgba(255, 255, 255, 0.08) !important;
+    height: 6px !important;
+    border-radius: 12px !important;
+    overflow: hidden;
+    margin: 6px 0;
+}
+
+.layout-tv .itemProgressBarForeground {
+    background: linear-gradient(90deg, #00d2ff 0%, #3a7bd5 100%) !important;
+    
+    height: 100% !important;
+    border-radius: 12px !important;
+    box-shadow: 0 0 12px rgba(142, 45, 226, 0.4); 
+}
+
 /* Gradient peste Backdrop */
 
 .layout-tv .itemDetailPage, .layout-tv .detailPageWrapperContainer {
@@ -469,35 +486,49 @@
 background-image: url(https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/heads/main/Logo.png) !important; }
 
 /* Player buttons */
+/* Ascunde butoanele specificate */
+.layout-tv .btnUserRating,        
+.layout-tv .volumeButtons,        
+.layout-tv .btnPip,               
+.layout-tv .btnFullscreen,       
+.layout-tv .headerBackButton,
+.layout-tv .headerSyncButton,
+.layout-tv .headerSearchButton,
+.layout-tv .headerButtonLeft, 
+.layout-tv .headerCastButton {
+    display: none !important;
+}
+
+/* Butoane Player Negre */
 .layout-tv .osdControls .paper-icon-button-light {
     color: #ffffff !important;
     transition: all 0.2s ease-in-out !important;
-    background: rgba(255, 255, 255, 0.05) !important;
-    border-radius: 50% !important;
+    background: rgba(0, 0, 0, 0.5) !important; /* Fundal negru solid */
+    border-radius: 10% !important;   /* Din cerc în pătrat */
     margin: 0 5px !important;
+    width: 60px !important;         /* Lățime egală */
+    height: 60px !important;        /* Înălțime egală */
 }
 
-/* Focus TV */
+/* Inversare culori */
 .layout-tv .osdControls .paper-icon-button-light:focus {
-    background: #ffffff !important;
-    color: #000000 !important;
+    background: #ffffff !important; /* Fundalul devine alb */
+    color: #000000 !important;    /* Iconița devine neagră */
     transform: scale(1);
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
 }
 
-/* Pause */
+/* Ajustare buton Pause pentru a fi egal cu celelalte */
 .layout-tv .btnPause {
-    transform: scale(1.2);
-    margin: 0 15px !important;
-}
-.layout-tv .btnPause:focus {
-    transform: scale(1.2) !important;
+    transform: scale(1) !important; /* Eliminat mărirea pentru a fi egal */
+    margin: 0 5px !important;       /* Margini egale cu restul */
 }
 
 /* Slider */
 .layout-tv .osdPositionSlider .mdl-slider-background-upper {
-    backgromaxund: 100500rgba(255, 255, 255, 0.2) !important;
+    background: rgba(255, 255, 255, 0.2) !important;
 }
+
 
 .layout-tv .osdPositionSlider .mdl-slider-background-lower {
     background: #ff0000 !important;
@@ -546,6 +577,14 @@ background-image: url(https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/he
 .layout-tv .listItem.itemAction:hover {
   background-color: transparent !important;
   box-shadow: none !important;
+}
+
+/* Selectăm elementul de logo din antetul paginii de detalii */
+.detailLogo {
+    height: 120px !important; /* Ajustează valoarea (ex: de la 80px la 120px) */
+    width: auto !important;   /* Menține aspectul corect al imaginii */
+    max-width: 400px;         /* Limită maximă pentru a nu ocupa tot ecranul */
+    margin-bottom: 10px;      /* Oferă puțin spațiu față de butoanele de dedesubt */
 }
 
 .layout-tv .detailLogo {
