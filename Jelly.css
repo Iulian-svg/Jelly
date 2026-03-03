@@ -41,7 +41,7 @@
 /* Fundal global */
 .backgroundContainer,
 .dialog {
-    background-image: url("https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/heads/main/Background7.jpg") !important;  
+    background-image: url("https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/heads/main/Background4.jpg") !important;  
 }
 
 /* Fundal image */
@@ -61,7 +61,7 @@
 }
 
 .backgroundContainer.withBackdrop:has(~ .mainAnimatedPages > .homePage:not(.hide)) {
-    background-image: url("https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/heads/main/Background7.jpg") !important;  
+    background-image: url("https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/heads/main/Background4.jpg") !important;  
 }
 
 /* Ascunde vizual, dar păstrează scroll-ul funcțional */
