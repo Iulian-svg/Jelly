@@ -212,7 +212,9 @@
 
 /* Home logo */
 .layout-desktop .pageTitleWithLogo {
-    background-image: url(https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/heads/main/Logo.png) !important;
+    background-image: url(https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/heads/main/Logo2.png) !important;
+    width: 800px;
+    margin-left: -40px;     
 }
 
 /* Player OSD */
@@ -483,7 +485,10 @@
 
 /* Logo */
 .layout-tv .pageTitleWithLogo {
-background-image: url(https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/heads/main/Logo.png) !important; }
+    background-image: url(https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/heads/main/Logo2.png) !important; 
+    width: 800px;
+    margin-left: -40px;
+}
 
 /* Player buttons */
 /* Ascunde butoanele specificate */
@@ -994,7 +999,9 @@ background-image: url(https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/he
 
 /* Home Page Logo */
 .layout-mobile .pageTitleWithLogo {
-    background-image: url(https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/heads/main/Logo.png) !important;
+    background-image: url(https://raw.githubusercontent.com/Iulian-svg/Jelly/refs/heads/main/Logo2.png) !important;
+    width: 800px;
+    margin-left: -40px;
 }
 
 /* Player buttons */
