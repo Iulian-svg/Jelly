@@ -78,6 +78,23 @@
          /* Desktop */
 /* ========================== */
 
+/* Bara progres cards */
+.layout-desktop .itemProgressBar {
+    background: rgba(255, 255, 255, 0.08) !important;
+    height: 6px !important;
+    border-radius: 12px !important;
+    overflow: hidden;
+    margin: 6px 0;
+}
+
+.layout-desktop .itemProgressBarForeground {
+    background: linear-gradient(90deg, #00d2ff 0%, #3a7bd5 100%) !important;
+    
+    height: 100% !important;
+    border-radius: 12px !important;
+    box-shadow: 0 0 12px rgba(142, 45, 226, 0.4); 
+}
+
 .layout-desktop .cardScalable {
     clip-path: inset(0 round 12px);
 }
@@ -217,37 +234,96 @@
     margin-left: -40px;     
 }
 
+/* Panou control subtitrari */
+.layout-desktop .actionSheet {
+    background: transparent !important;
+    display: flex !important;
+    align-items: flex-end !important; /* Poziționare jos */
+    justify-content: flex-end !important; /* Poziționare dreapta */
+    padding-right: 5% !important; /* Spațiu de la marginea dreaptă */
+    padding-bottom: 80px !important; /* Spațiu de la marginea de jos (peste player) */
+}
+
+.layout-desktop .actionSheetContent {
+    width: 450px !important; /* Lățimea aproximativă a dreptunghiului tău */
+    height: 350px !important; /* Înălțimea aproximativă */
+    max-height: 50vh !important;
+    background: linear-gradient(145deg, rgba(0, 0, 0, 0.9), rgba(20, 20, 20, 0.8)) !important;
+    backdrop-filter: blur(15px) !important;
+    border-radius: 15px !important; /* Colțuri rotunjite moderne */
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    padding: 20px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+    overflow-y: auto !important;
+}
+
+body:has(.actionSheetContent) .videoOsdBottom {
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+.layout-desktop .actionSheetMenuItem {
+    padding: 12px 15px !important;
+    margin: 4px 0 !important;
+    border-radius: 8px !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+    background: transparent !important;
+}
+
+.layout-desktop .actionSheetMenuItem:hover {
+    background: #ffffff !important;
+    color: #000000 !important;
+    transform: translateX(5px);
+}
+
+.layout-desktop .actionSheetMenuItem-selected {
+    color: #ffffff !important;
+    font-weight: bold !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.layout-desktop .actionSheet .btnCancel {
+    display: none !important;
+}
+
 /* Player OSD */
 .layout-desktop .osdControls .paper-icon-button-light {
     color: #ffffff !important;
     transition: all 0.2s ease-in-out !important;
-    background: rgba(255, 255, 255, 0.05) !important;
-    border-radius: 50% !important;
+    background: rgba(0, 0, 0, 0.5) !important; /* Fundal negru solid */
+    border-radius: 10% !important;   /* Din cerc în pătrat */
     margin: 0 5px !important;
+    width: 50px !important;         /* Lățime egală */
+    height: 50px !important;        /* Înălțime egală */
 }
 
-.layout-desktop .osdControls .paper-icon-button-light:focus {
-    background: #ffffff !important;
-    color: #000000 !important;
-    transform: scale(1.2);
+/* Inversare culori */
+.layout-desktop .osdControls .paper-icon-button-light:hover {
+    background: #ffffff !important; /* Fundalul devine alb */
+    color: #000000 !important;    /* Iconița devine neagră */
+    transform: scale(1);
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
 }
 
+/* Ajustare buton Pause pentru a fi egal cu celelalte */
 .layout-desktop .btnPause {
-    transform: scale(1.3);
-    margin: 0 15px !important;
+    transform: scale(1) !important; /* Eliminat mărirea pentru a fi egal */
+    margin: 0 5px !important;       /* Margini egale cu restul */
 }
 
-.layout-desktop .btnPause:focus {
-    transform: scale(1.5) !important;
-}
-
+/* Slider */
 .layout-desktop .osdPositionSlider .mdl-slider-background-upper {
     background: rgba(255, 255, 255, 0.2) !important;
 }
 
+
 .layout-desktop .osdPositionSlider .mdl-slider-background-lower {
     background: #ff0000 !important;
+}
+
+.layout-desktop .osdPositionSlider::-webkit-slider-thumb {
+    background: #ffffff !important;
+    border: 2px solid #000;
 }
 
 .layout-desktop .sliderMarker {
@@ -490,6 +566,109 @@
     margin-left: -40px;
 }
 
+/* Panoul de subtitrări */
+body:has(.actionSheetContent) .videoOsdBottom { 
+    opacity: 0 !important; 
+    pointer-events: none !important;
+}
+
+.layout-tv .actionSheetScroller {
+    width: 500px !important; 
+    min-width: 500px !important;
+    overflow: visible !important; /* Permite conținutului să iasă dacă e cazul */
+    padding: 0 !important;
+}
+
+.layout-tv .actionSheetContent { 
+    position: absolute; 
+    top: 30%; 
+    right: 5%; 
+    width: 600px !important; /* Lățime fixă optimă pentru TV */
+    height: auto !important; 
+    max-height: 60vh !important; 
+    font-size: 1rem; /* Text mai lizibil de la distanță */
+}
+
+.layout-tv .dialog.actionsheet-fullscreen, 
+.layout-tv .actionSheetContent, 
+.layout-tv .actionSheetScroller { 
+    justify-content: flex-start;
+    background-color: transparent !important; 
+    background: transparent !important; 
+    box-shadow: none !important; 
+    border: none !important;
+}
+
+.layout-tv .actionSheet { 
+    background: transparent !important; 
+    display: flex !important; 
+    align-items: center !important; 
+    justify-content: flex-start !important; 
+    padding-right: 5% !important; 
+}
+
+.layout-tv .actionSheetContent { 
+    background: rgba(15, 15, 15, 0.95) !important; 
+    backdrop-filter: blur(25px) !important; 
+    border-radius: 20px !important; 
+    border: 2px solid rgba(255, 255, 255, 0.1) !important; 
+    padding: 15px !important; /* Padding redus în interiorul panoului */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8) !important; 
+    overflow-y: auto !important; /* Permite scroll dacă lista e foarte lungă */
+}
+
+.layout-tv .actionSheetMenuItem { 
+    position: relative;
+    margin: 4px 0 !important; 
+    padding: 8px 15px !important; /* Padding mult mai mic pe verticală */
+    border-radius: 8px !important; 
+    color: rgba(255, 255, 255, 0.7) !important; 
+    font-size: 1rem !important;  /* Font ușor mai mic pentru a economisi spațiu */
+    transition: all 0.2s ease;
+    min-height: auto !important;   /* Elimină orice constrângere de înălțime implicită */
+}
+
+.layout-tv .actionSheetMenuItem:focus,
+.layout-tv .actionSheetMenuItem:hover { 
+    background: #ffffff !important; 
+    color: #000000 !important; 
+    transform: scale(1.02); /* Efect de mărire mai subtil */
+    outline: none !important;
+}
+
+.layout-tv .listItemBody.actionsheetListItemBody {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.layout-tv .actionSheetScroller {
+    padding: 0 !important;
+}
+
+.layout-tv .listItem-button.actionSheetMenuItem {
+    display: flex;
+    justify-content: flex-start !important; /* Aliază conținutul la început (stânga) */
+    width: 100% !important;          /* Reduce lățimea butonului pentru a lăsa spațiu în dreapta */
+    margin-right: auto !important;  /* Împinge butonul spre stânga containerului */
+    margin-left: 0 !important;      /* Se asigură că e lipit de marginea stângă */
+    padding-left: 15px !important;  /* Spațiu mic interior în stânga pentru text */
+    box-sizing: border-box;
+}
+
+.layout-tv .listItemBody.actionsheetListItemBody {
+    text-align: left !important;
+    flex-grow: 0; /* Nu mai forțează ocuparea întregului spațiu dacă nu e nevoie */
+}
+
+.layout-tv .actionSheetContent {
+    padding-left: 10px !important;  /* Reduce spațiul gol din marginea stângă a panoului */
+    padding-right: 40px !important; /* Adaugă spațiu în dreapta pentru a "împinge" vizual totul spre stânga */
+}
+
+.layout-tv .btnCloseActionSheet {
+    display: none !important;
+}
+
 /* Player buttons */
 /* Ascunde butoanele specificate */
 .layout-tv .btnUserRating,        
@@ -720,6 +899,23 @@
 /* ========================== */
      /* SCOPE PHONE ONLY */
 /* ========================== */
+
+/* Bara progres cards */
+.layout-mobile .itemProgressBar {
+    background: rgba(255, 255, 255, 0.08) !important;
+    height: 6px !important;
+    border-radius: 12px !important;
+    overflow: hidden;
+    margin: 6px 0;
+}
+
+.layout-mobile .itemProgressBarForeground {
+    background: linear-gradient(90deg, #00d2ff 0%, #3a7bd5 100%) !important;
+    
+    height: 100% !important;
+    border-radius: 12px !important;
+    box-shadow: 0 0 12px rgba(142, 45, 226, 0.4); 
+}
 
 /* Afișare Logo și poziționarea acestuia */
 .layout-mobile .detailLogo {
@@ -1004,35 +1200,95 @@
     margin-left: -40px;
 }
 
+/* Panoul de subtitrări */
+.layout-mobile .actionSheet {
+    background: transparent !important;
+    display: flex !important;
+    align-items: flex-end !important; /* Poziționare jos */
+    justify-content: flex-end !important; /* Poziționare dreapta */
+    padding-right: 5% !important; /* Spațiu de la marginea dreaptă */
+    padding-bottom: 80px !important; /* Spațiu de la marginea de jos (peste player) */
+}
+
+.layout-mobile .actionSheetContent {
+    width: 450px !important; /* Lățimea aproximativă a dreptunghiului tău */
+    height: 350px !important; /* Înălțimea aproximativă */
+    max-height: 50vh !important;
+    background: linear-gradient(145deg, rgba(0, 0, 0, 0.9), rgba(20, 20, 20, 0.8)) !important;
+    backdrop-filter: blur(15px) !important;
+    border-radius: 15px !important; /* Colțuri rotunjite moderne */
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    padding: 20px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+    overflow-y: auto !important;
+}
+
+body:has(.actionSheetContent) .videoOsdBottom {
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+.layout-mobile .actionSheetMenuItem {
+    padding: 12px 15px !important;
+    margin: 4px 0 !important;
+    border-radius: 8px !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+    background: transparent !important;
+}
+
+.layout-mobile .actionSheetMenuItem:hover {
+    background: #ffffff !important;
+    color: #000000 !important;
+    transform: translateX(5px);
+}
+
+.layout-mobile .actionSheetMenuItem-selected {
+    color: #ffffff !important;
+    font-weight: bold !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.layout-mobile .actionSheet .btnCancel {
+    display: none !important;
+}
+
+.layout-mobile .focuscontainer.dialog.actionsheet-not-fullscreen.actionSheet.centeredDialog.opened {
+    background-color: transparent !important;
+    background: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
 /* Player buttons */
 .layout-mobile .osdControls .paper-icon-button-light {
     color: #ffffff !important;
     transition: all 0.2s ease-in-out !important;
-    background: rgba(255, 255, 255, 0.05) !important;
-    border-radius: 50% !important;
+    background: rgba(0, 0, 0, 0.5) !important; /* Fundal negru solid */
+    border-radius: 10% !important;   /* Din cerc în pătrat */
     margin: 0 5px !important;
+    width: 50px !important;         /* Lățime egală */
+    height: 50px !important;        /* Înălțime egală */
 }
 
-.layout-mobile .osdControls .paper-icon-button-light:focus {
-    background: #ffffff !important;
-    color: #000000 !important;
-    transform: scale(1.2);
+/* Inversare culori */
+.layout-mobile .osdControls .paper-icon-button-light:hover {
+    background: #ffffff !important; /* Fundalul devine alb */
+    color: #000000 !important;    /* Iconița devine neagră */
+    transform: scale(1);
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
 }
 
+/* Ajustare buton Pause pentru a fi egal cu celelalte */
 .layout-mobile .btnPause {
-    transform: scale(1.3);
-    margin: 0 15px !important;
-}
-
-.layout-mobile .btnPause:focus {
-    transform: scale(1.5) !important;
+    transform: scale(1) !important; /* Eliminat mărirea pentru a fi egal */
+    margin: 0 5px !important;       /* Margini egale cu restul */
 }
 
 /* Slider */
 .layout-mobile .osdPositionSlider .mdl-slider-background-upper {
     background: rgba(255, 255, 255, 0.2) !important;
 }
+
 
 .layout-mobile .osdPositionSlider .mdl-slider-background-lower {
     background: #ff0000 !important;
