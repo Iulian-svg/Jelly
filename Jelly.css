@@ -755,6 +755,64 @@ body:has(.actionSheetContent) .videoOsdBottom {
     outline: none !important;
 }
 
+/* Episodul urmator Buton */
+.upNextDialog {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.upNextDialog-nextVideoText, 
+.upNextDialog-title, 
+.upNextDialog-mediainfo, 
+.btnHide {
+    display: none !important;
+}
+
+.upNextContainer {
+    justify-content: flex-end !important;
+    align-items: flex-end !important;
+    padding: 40px !important;
+}
+
+.btnStartNow {
+    background: rgba(40, 40, 40, 0.8) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 0.8em 2em !important;
+    border-radius: 4px; /* Ajustează dacă vrei margini rotunjite */
+    position: relative;
+    overflow: hidden;
+}
+
+.btnStartNow:focus {
+    background: #e2e2e2 !important;
+    color: #000000 !important;
+    border-color: #ffffff !important;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    outline: none !important;
+}
+
+.btnStartNow::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.5);
+    animation: loadingBar 22s linear forwards;
+}
+
+@keyframes loadingBar {
+    from { width: 0%; }
+    to { width: 100%; }
+}
+
+
 /* List items */
 .layout-tv .listItem.itemAction.focused,
 .layout-tv .listItem.itemAction:focus,
