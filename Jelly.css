@@ -566,29 +566,7 @@ body:has(.actionSheetContent) .videoOsdBottom {
     margin-left: -40px;
 }
 
-/* Panoul de subtitrări */
-body:has(.actionSheetContent) .videoOsdBottom { 
-    opacity: 0 !important; 
-    pointer-events: none !important;
-}
-
-.layout-tv .actionSheetScroller {
-    width: 500px !important; 
-    min-width: 500px !important;
-    overflow: visible !important; /* Permite conținutului să iasă dacă e cazul */
-    padding: 0 !important;
-}
-
-.layout-tv .actionSheetContent { 
-    position: absolute; 
-    top: 30%; 
-    right: 5%; 
-    width: 600px !important; /* Lățime fixă optimă pentru TV */
-    height: auto !important; 
-    max-height: 60vh !important; 
-    font-size: 1rem; /* Text mai lizibil de la distanță */
-}
-
+/* Panou subtitrari */
 .layout-tv .dialog.actionsheet-fullscreen, 
 .layout-tv .actionSheetContent, 
 .layout-tv .actionSheetScroller { 
@@ -599,75 +577,88 @@ body:has(.actionSheetContent) .videoOsdBottom {
     border: none !important;
 }
 
-.layout-tv .actionSheet { 
-    background: transparent !important; 
-    display: flex !important; 
-    align-items: center !important; 
-    justify-content: flex-start !important; 
-    padding-right: 5% !important; 
+@keyframes slideInRight {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
 }
 
+/* 3. Transformarea panoului în Sidebar de sus până jos */
 .layout-tv .actionSheetContent { 
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 600px !important; 
+    min-width: 600px !important;
+    height: 100vh !important; /* Înălțime completă */
+    max-height: 100vh !important;
+    margin: 0 !important;
+    border-radius: 0 !important; /* Sidebar-ul arată mai bine fără colțuri rotunjite pe latura dreaptă */
+    border-left: 2px solid rgba(255, 255, 255, 0.1) !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-right: none !important;
+    
     background: rgba(15, 15, 15, 0.95) !important; 
     backdrop-filter: blur(25px) !important; 
-    border-radius: 20px !important; 
-    border: 2px solid rgba(255, 255, 255, 0.1) !important; 
-    padding: 15px !important; /* Padding redus în interiorul panoului */
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8) !important; 
-    overflow-y: auto !important; /* Permite scroll dacă lista e foarte lungă */
+    padding: 40px 20px !important; /* Spațiu generos sus pentru titlu */
+    box-shadow: -10px 0 50px rgba(0, 0, 0, 0.9) !important;
+    
+    /* Aplicarea efectului de apariție */
+    animation: slideInRight 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow-y: auto !important;
 }
 
-.layout-tv .actionSheetMenuItem { 
-    position: relative;
-    margin: 4px 0 !important; 
-    padding: 8px 15px !important; /* Padding mult mai mic pe verticală */
-    border-radius: 8px !important; 
-    color: rgba(255, 255, 255, 0.7) !important; 
-    font-size: 1rem !important;  /* Font ușor mai mic pentru a economisi spațiu */
-    transition: all 0.2s ease;
-    min-height: auto !important;   /* Elimină orice constrângere de înălțime implicită */
-}
-
+/* Stil Focus: Fundal Alb, Text Negru */
 .layout-tv .actionSheetMenuItem:focus,
 .layout-tv .actionSheetMenuItem:hover { 
-    background: #ffffff !important; 
+    background-color: #ffffff !important; 
     color: #000000 !important; 
-    transform: scale(1.02); /* Efect de mărire mai subtil */
-    outline: none !important;
+    transform: scale(1.02);
+    border-radius: 10px !important; /* Arată mai profi pe sidebar */
 }
 
-.layout-tv .listItemBody.actionsheetListItemBody {
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
+/* 4. Ajustarea scroller-ului pentru a ocupa restul spațiului */
 .layout-tv .actionSheetScroller {
-    padding: 0 !important;
+    width: 100% !important;
+    min-width: 100% !important;
+    height: 100% !important;
+    padding-top: 20px !important;
 }
 
-.layout-tv .listItem-button.actionSheetMenuItem {
-    display: flex;
-    justify-content: flex-start !important; /* Aliază conținutul la început (stânga) */
-    width: 100% !important;          /* Reduce lățimea butonului pentru a lăsa spațiu în dreapta */
-    margin-right: auto !important;  /* Împinge butonul spre stânga containerului */
-    margin-left: 0 !important;      /* Se asigură că e lipit de marginea stângă */
-    padding-left: 15px !important;  /* Spațiu mic interior în stânga pentru text */
-    box-sizing: border-box;
+/* 5. Stil pentru elementele din listă (păstrat din cerința ta) */
+.layout-tv .actionSheetMenuItem { 
+    margin: 6px 0 !important; 
+    padding: 20px 40px !important;
+    border-radius: 10px !important; 
+    font-size: 1rem !important; /* Puțin mai mare pentru că e pe tot ecranul */
+    min-height: 100px !important; 
+    display: flex !important;
+    align-items: center !important;
 }
 
-.layout-tv .listItemBody.actionsheetListItemBody {
-    text-align: left !important;
-    flex-grow: 0; /* Nu mai forțează ocuparea întregului spațiu dacă nu e nevoie */
+/* 6. Eliminăm elementele inutile care pot bloca designul */
+body:has(.actionSheetContent) .videoOsdBottom { 
+    opacity: 0 !important; 
+    pointer-events: none !important;
 }
 
-.layout-tv .actionSheetContent {
-    padding-left: 10px !important;  /* Reduce spațiul gol din marginea stângă a panoului */
-    padding-right: 40px !important; /* Adaugă spațiu în dreapta pentru a "împinge" vizual totul spre stânga */
-}
-
+/* Ascundem butonul de închidere implicit (folosești Back de pe telecomandă) */
 .layout-tv .btnCloseActionSheet {
     display: none !important;
 }
+
+/* Forțăm titlul să fie vizibil și aliniat frumos */
+.layout-tv .actionSheetTitle {
+    text-align: left !important;
+    margin-left: 20px !important;
+    margin-bottom: 30px !important;
+    font-size: 2rem !important;
+    color: #fff !important;
+}
+
 
 /* Player buttons */
 /* Ascunde butoanele specificate */
