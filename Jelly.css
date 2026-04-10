@@ -365,6 +365,69 @@ body:has(.actionSheetContent) .videoOsdBottom {
     box-shadow: none !important;
 }
 
+/* Episodul urmator Buton */
+.layout-desktop .upNextDialog {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.layout-desktop .upNextDialog-nextVideoText, 
+.layout-desktop .upNextDialog-title, 
+.layout-desktop .upNextDialog-mediainfo, 
+.layout-desktop .btnHide {
+    display: none !important;
+}
+
+.layout-desktop .upNextContainer {
+    justify-content: flex-end !important;
+    align-items: flex-end !important;
+    padding: 40px !important;
+}
+
+.layout-desktop .btnStartNow {
+    pointer-events: auto !important;    /* Re-activează click-ul pe buton */
+    background: rgba(40, 40, 40, 0.8) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.5em !important;
+    padding: 1.2em 3em !important;
+    min-width: 250px;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* Schimbă culoarea și la FOCUS (tastatură/telecomandă) și la HOVER (mouse) */
+.layout-desktop .btnStartNow:focus, 
+.layout-desktop .btnStartNow:hover {
+    background: #e2e2e2 !important;
+    color: #000000 !important;
+    border-color: #ffffff !important;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    outline: none !important;
+}
+
+.layout-desktop .btnStartNow::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.5);
+    animation: loadingBar 22s linear forwards;
+}
+
+@keyframes loadingBar {
+    from { width: 0%; }
+    to { width: 100%; }
+}
+
 /* ========================= */
       /* SCOPE TV ONLY */
 /* ========================= */
@@ -747,26 +810,26 @@ body:has(.actionSheetContent) .videoOsdBottom {
 }
 
 /* Episodul urmator Buton */
-.upNextDialog {
+.layout-tv .upNextDialog {
     background: transparent !important;
     box-shadow: none !important;
     border: none !important;
 }
 
-.upNextDialog-nextVideoText, 
-.upNextDialog-title, 
-.upNextDialog-mediainfo, 
-.btnHide {
+.layout-tv .upNextDialog-nextVideoText, 
+.layout-tv .upNextDialog-title, 
+.layout-tv .upNextDialog-mediainfo, 
+.layout-tv .btnHide {
     display: none !important;
 }
 
-.upNextContainer {
+.layout-tv .upNextContainer {
     justify-content: flex-end !important;
     align-items: flex-end !important;
     padding: 40px !important;
 }
 
-.btnStartNow {
+.layout-tv .btnStartNow {
     background: rgba(40, 40, 40, 0.8) !important;
     color: #ffffff !important;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
@@ -779,7 +842,7 @@ body:has(.actionSheetContent) .videoOsdBottom {
     overflow: hidden;
 }
 
-.btnStartNow:focus {
+.layout-tv .btnStartNow:focus {
     background: #e2e2e2 !important;
     color: #000000 !important;
     border-color: #ffffff !important;
@@ -788,7 +851,7 @@ body:has(.actionSheetContent) .videoOsdBottom {
     outline: none !important;
 }
 
-.btnStartNow::after {
+.layout-tv .btnStartNow::after {
     content: "";
     position: absolute;
     bottom: 0;
